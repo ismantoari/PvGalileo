@@ -83,5 +83,18 @@ public class GlobalStepAction {
         Action.inputText(Global.textArea(textAreaName),inputValue);
     }
 
+    public void userClickOnSwitch(String marking){
+        Action.click(Global.switchButton(marking));
+    }
+
+    public void userClickComboBoxAndSelectValue(String dropdownName, String targetValue)    {
+        Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
+        Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
+        Action.enterKey(Global.comboBoxSelector(dropdownName));
+        //Action.tabKey(Global.comboBoxSelector(dropdownName));
+
+
+    }
+
 
 }

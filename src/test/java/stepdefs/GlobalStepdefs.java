@@ -75,4 +75,15 @@ public class GlobalStepdefs {
     public void userInputTextAreaWithValue(String textAreaName, String inputValue) {
         globalStepAction.userInputTextAreaWithValue(textAreaName, inputValue);
     }
+
+    @And("user click on switch {string}")
+    public void userClickOnSwitch(String marking) {
+        globalStepAction.userClickOnSwitch(marking);
+    }
+
+
+    @And("user click combo box {string} and select value{string}")
+    public void userClickComboBoxAndSelectValue(String dropdownName, String targetValue) {
+        globalStepAction.userClickComboBoxAndSelectValue(dropdownName, targetValue);
+    }
 }
