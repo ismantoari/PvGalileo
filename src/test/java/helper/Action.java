@@ -32,6 +32,9 @@ public class Action {
     public static void tabKey (By textLocator){
         driver.findElement(textLocator).sendKeys(Keys.TAB);
     }
+    public static void escKey (By textLocator){
+        driver.findElement(textLocator).sendKeys(Keys.ESCAPE);
+    }
 
     public static void selectValue(By textLocator,String targetValue){
         Select dropdown = new Select(driver.findElement(textLocator));
@@ -51,6 +54,10 @@ public class Action {
 
     public static void click (By webElement){
         driver.findElement(webElement).click();
+    }
+
+    public static void selectListDropdown(By listDropdown){
+        driver.findElement(listDropdown).click();
     }
 
     public static String getUrl(){

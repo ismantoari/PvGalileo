@@ -10,4 +10,9 @@ public class PromoStepdefs {
     public void userUploadBannerPromo(String filePath) {
         promoAddAction.userUploadBannerPromo(filePath);
     }
+
+    @And("user click add promo calculation {string}")
+    public void userClickAddPromoCalculation(String promoType) throws Exception{
+        promoAddAction.userClickAddPromoCalculation(promoType);
+    }
 }

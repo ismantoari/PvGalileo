@@ -91,9 +91,19 @@ public class GlobalStepAction {
         Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
         Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
         Action.enterKey(Global.comboBoxSelector(dropdownName));
-        //Action.tabKey(Global.comboBoxSelector(dropdownName));
+    }
 
+    public void userClickComboBoxCheckBoxAndSelectValue(String dropdownName, String targetValue)    {
+        Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
+        Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
+        Action.enterKey(Global.comboBoxSelector(dropdownName));
+        Action.escKey(Global.comboBoxSelector(dropdownName));
+    }
 
+    public void userClickDropdownAndSelectValue(String dropdownName, String targetValue) throws Exception{
+        Action.click(Global.dropdownSelector(dropdownName));
+        Thread.sleep(200);
+        Action.selectListDropdown(Global.dropdownList(targetValue));
     }
 
 

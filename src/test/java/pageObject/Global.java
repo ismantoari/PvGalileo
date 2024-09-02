@@ -44,6 +44,14 @@ public class Global {
         return By.xpath("//label[text()='"+marking+"']/following-sibling::div/child::input");
     }
 
+    public static By dropdownSelector(String dropdownName){
+        return By.xpath("//label[text()='"+dropdownName+"']//following-sibling::div/child::div[@role='button']");
+    }
+
+    public static By dropdownList (String targetValue){
+        return By.xpath("//li[text()='"+targetValue+"']");
+    }
+
 
 }
 
