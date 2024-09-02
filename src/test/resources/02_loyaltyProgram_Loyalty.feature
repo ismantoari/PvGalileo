@@ -7,8 +7,10 @@ Feature: Loyalty Program - Loyalty
     And user select menu "Loyalty Program"
     And user select sub menu "Loyalty"
     And user click button "Add Loyalty"
+
     And user upload loyalty logo "F:\PQA.jpg"
     And user input text box "Loyalty Name *" with value "Loyalty SQA Automation"
+
     And user input text box "Point(s) to Rupiah Ratio *" with value "1"
     And user click check checkbox "Mobile Visibility"
     And user click radio button of "Exclusive" with value "No"
@@ -27,12 +29,12 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Max Redeem *" with value "0"
         ## Add Reward List 1 for bronze
     And user click button add reward list
-    And user upload picture reward list "1" with path "F:\coffee.jpg"
+    And user upload picture reward list "1" with path "D:\K1.jpg"
     And user input reward name of reward list "1" with "Coffee"
     And user input Reward Description of reward list "1" with value "reward QA level pertama"
         ## Add Reward List 2 for bronze
     And user click button add reward list
-    And user upload picture reward list "2" with path "F:\beverage.jpg"
+    And user upload picture reward list "2" with path "D:\D1.jpg"
     And user input reward name of reward list "2" with "Orange Juice"
     And user input Reward Description of reward list "2" with value "reward QA level kedua"
     And user click button "Add Membership"
