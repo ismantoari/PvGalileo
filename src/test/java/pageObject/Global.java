@@ -36,6 +36,21 @@ public class Global {
         return By.xpath("(//*[text()='"+groupName+"']//parent::div/following-sibling::div/descendant::div[text()='"+labelRadio+"'])//parent::span/preceding-sibling::span");
     }
 
+    public static By switchButton (String marking){
+        return By.xpath("//span[text()='"+marking+"']/preceding-sibling::span/child::*");
+    }
+
+    public static By comboBoxSelector (String marking){
+        return By.xpath("//label[text()='"+marking+"']/following-sibling::div/child::input");
+    }
+
+    public static By dropdownSelector(String dropdownName){
+        return By.xpath("//label[text()='"+dropdownName+"']//following-sibling::div/child::div[@role='button']");
+    }
+
+    public static By dropdownList (String targetValue){
+        return By.xpath("//li[text()='"+targetValue+"']");
+    }
 
 
 }

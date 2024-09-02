@@ -2,6 +2,7 @@ package helper;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import pageObject.Global;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -20,6 +21,26 @@ public class Action {
         driver.findElement(textLocator).sendKeys(inputValue);
     }
 
+    public static void enterKey (By textLocator){
+        driver.findElement(textLocator).sendKeys(Keys.ENTER);
+    }
+
+    public static void arrowDownKey (By textLocator){
+        driver.findElement(textLocator).sendKeys(Keys.ARROW_DOWN);
+    }
+
+    public static void tabKey (By textLocator){
+        driver.findElement(textLocator).sendKeys(Keys.TAB);
+    }
+    public static void escKey (By textLocator){
+        driver.findElement(textLocator).sendKeys(Keys.ESCAPE);
+    }
+
+    public static void selectValue(By textLocator,String targetValue){
+        Select dropdown = new Select(driver.findElement(textLocator));
+        dropdown.selectByVisibleText(targetValue);
+    }
+
     public static void clearText (By textLocator){
         driver.findElement(textLocator).clear();
     }
@@ -33,6 +54,10 @@ public class Action {
 
     public static void click (By webElement){
         driver.findElement(webElement).click();
+    }
+
+    public static void selectListDropdown(By listDropdown){
+        driver.findElement(listDropdown).click();
     }
 
     public static String getUrl(){
