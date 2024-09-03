@@ -8,7 +8,7 @@ Feature: Loyalty Program - Loyalty
     And user select sub menu "Loyalty"
     And user click button "Add Loyalty"
     And user upload loyalty logo "F:\PQA.jpg"
-    And user input text box "Loyalty Name *" with value "Loyalty SQA Automation"
+    And user input text box "Loyalty Name *" with value "Loyalty SQA"
     And user input text box "Point(s) to Rupiah Ratio *" with value "1"
     And user click check checkbox "Mobile Visibility"
     And user click radio button of "Exclusive" with value "No"
@@ -56,13 +56,13 @@ Feature: Loyalty Program - Loyalty
     And user input Reward Description of reward list "1" with value "reward QA level silver"
     And user click button "Add Membership"
 
-
-
     #Applied merchant
-    
-    And user click check checkbox ""
-    # Member invitation
+    And user click check checkbox "All Merchant"
+
+    #Member Invitation
+
     # Applied payment method
+    And user click check checkbox "All Payment Method Including Cash"
     #
-    And stop
-    And stop
+    When user click button "Add Loyalty"
+    Then show alert pop up "Insert Loyalty program success"

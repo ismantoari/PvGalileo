@@ -42,7 +42,7 @@ tasks.register('customWebTest') {
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                     '--plugin', 'pretty',
-                    '--plugin', 'html:reports/cucumber-web.html',
+                    '--plugin', 'html:reports/GaliloeTestReports',
                     '--glue', 'stepdefs',
                     '--tags', "@web",
                     'src/test/resources'
