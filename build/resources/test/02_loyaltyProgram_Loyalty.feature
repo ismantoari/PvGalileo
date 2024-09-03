@@ -195,7 +195,7 @@ Feature: Loyalty Program - Loyalty
 
     #Normal Case loyalty 4 member bronze-Platinum
   @web
-  Scenario: Add new loyalty
+  Scenario: Add new loyalty 112
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"
@@ -295,9 +295,51 @@ Feature: Loyalty Program - Loyalty
     And user input reward name of reward list "2" with "Just Juice"
     And user input Reward Description of reward list "2" with value "reward QA Point 2"
     And user click button "Add Membership"
-#    And user click check checkbox "All Merchant"
+    And user click check checkbox "All Merchant"
 #    And user click check checkbox "All Payment Method Including Cash"
 #    And user click button "Add Loyalty"
+    And stop
+
+# cancel add
+  @web
+  Scenario: Cancel Add loyalty
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Loyalty"
+    And user click button "Add Loyalty"
+    And user upload loyalty logo "D:\PQA.jpg"
+    And user input text box "Loyalty Name *" with value "Loyalty SQA 1"
+    And user input text box "Point(s) to Rupiah Ratio *" with value "1"
+    And user click check checkbox "Mobile Visibility"
+    And user click radio button of "Exclusive" with value "No"
+    And user click radio button of "Point Expiry Date" with value "Expiry"
+    And user input Point Expiry in Day with value "3"
+    And user click radio button of "Accumulated Earn Point Duration" with value "In the Last 3 Months"
+    And user click radio button of "OTP Digit" with value "No OTP"
+    And user input text area "Description" with value "Loyalty program QA 1"
+    # Add membership bronze
+    And user click add membership
+    And user input text box "Level Name *" with value "bronze Member"
+    And user input Member Type Color with value "#cd7F32"
+    And user input add membership description with value "Bronze member level"
+    And user input text box "Spending To Earn One Point *" with value "2000"
+    And user select Partial Redeem "Yes"
+    And user input text box "Max Redeem *" with value "0"
+        ## Add Reward List 1
+    And user click button add reward list
+    And user upload picture reward list "1" with path "D:\K1.jpg"
+    And user input reward name of reward list "1" with "Coffee"
+    And user input Reward Description of reward list "1" with value "reward QA level pertama"
+        ## Add Reward List 2
+    And user click button add reward list
+    And user upload picture reward list "2" with path "D:\D1.jpg"
+    And user input reward name of reward list "2" with "Orange Juice"
+    And user input Reward Description of reward list "2" with value "reward QA level kedua"
+    And user click button "Add Membership"
+#    And user click check checkbox "All Merchant"
+#    And user click check checkbox "All Payment Method Including Cash"
+#    And user click button "cancel"
     And stop
 
 #negative case
@@ -341,4 +383,3 @@ Feature: Loyalty Program - Loyalty
 #    And user click check checkbox "All Payment Method Including Cash"
 #    And user click button "Add Loyalty"
     And stop
-

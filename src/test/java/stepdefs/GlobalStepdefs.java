@@ -98,4 +98,10 @@ public class GlobalStepdefs {
         globalStepAction.userClickDropdownAndSelectValue(dropdownName, targetValue);
         Thread.sleep(200);
     }
+
+    @And("user click buttonDrop {string} and select value {string}")
+    public void userClickButtonDropAndSelectValue(String buttonName, String targetValue) throws Exception {
+        globalStepAction.userClickbuttonDropAndSelectValue(buttonName, targetValue);
+        Thread.sleep(200);
+    }
 }

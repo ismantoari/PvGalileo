@@ -106,5 +106,11 @@ public class GlobalStepAction {
         Action.selectListDropdown(Global.dropdownList(targetValue));
     }
 
+    public void userClickbuttonDropAndSelectValue(String buttonName, String targetValue) throws Exception{
+        Action.click(Global.button(buttonName));
+        Thread.sleep(200);
+        Action.selectListDropdown(Global.dropdownList(targetValue));
+    }
+
 
 }

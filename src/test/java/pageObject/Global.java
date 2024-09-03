@@ -29,7 +29,7 @@ public class Global {
     }
 
     public static By checkbox (String marking){
-        return By.xpath("//*[text()='Mobile Visibility']/preceding-sibling::span");
+        return By.xpath("//*[text()='"+marking+"']/preceding-sibling::span");
     }
 
     public static By radioButton (String groupName, String labelRadio){
