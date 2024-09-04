@@ -19,7 +19,7 @@ public class GlobalStepdefs {
     }
 
     @Then("user is on {string} page")
-    public void userIsOnPage(String urlTarget) {
+    public void userIsOnPage(String urlTarget) throws Exception{
         globalStepAction.verifyURL(urlTarget);
     }
 
@@ -97,5 +97,20 @@ public class GlobalStepdefs {
     public void userClickDropdownAndSelectValue(String dropdownName, String targetValue) throws Exception {
         globalStepAction.userClickDropdownAndSelectValue(dropdownName, targetValue);
         Thread.sleep(200);
+    }
+
+    @And("user search {string}")
+    public void userSearch(String searchText) {
+        globalStepAction.userSearch(searchText);
+    }
+
+    @And("user click burger menu")
+    public void userClickBurgerMenu() {
+        globalStepAction.userClickBurgerMenu();
+    }
+
+    @And("user click list {string}")
+    public void userClickList(String targetName) {
+        globalStepAction.userClickList(targetName);
     }
 }

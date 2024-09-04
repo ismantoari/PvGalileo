@@ -22,5 +22,19 @@ public class LoyaltyAddAction {
 
     }
 
+    public void userEditMembership(String membershipLevelName){
+        Action.click(LoyaltyAdd.burgerButtonMembershipLevel(membershipLevelName));
+
+
+
+
+
+        // Logic lain iterasi
+
+
+
+
+    }
+
 
 }

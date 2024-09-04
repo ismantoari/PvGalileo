@@ -13,7 +13,8 @@ public class GlobalStepAction {
         Action.click(Global.alertPopup);
     }
 
-    public void verifyURL(String urlTarget){
+    public void verifyURL(String urlTarget)throws Exception{
+        Thread.sleep(500);
         Action.verifyURL(urlTarget);
     }
 
@@ -104,6 +105,18 @@ public class GlobalStepAction {
         Action.click(Global.dropdownSelector(dropdownName));
         Thread.sleep(200);
         Action.selectListDropdown(Global.dropdownList(targetValue));
+    }
+
+    public void userSearch(String searchText){
+        Action.inputText(Global.searchBox,searchText);
+    }
+
+    public void userClickBurgerMenu(){
+        Action.click(Global.burgerMenu);
+    }
+
+    public void userClickList(String targetName){
+        Action.click(Global.dropdownList(targetName));
     }
 
 
