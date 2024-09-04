@@ -104,4 +104,9 @@ public class GlobalStepdefs {
         globalStepAction.userClickbuttonDropAndSelectValue(buttonName, targetValue);
         Thread.sleep(200);
     }
+
+    @And("user select sub sub menu {string}")
+    public void userSelectsubSubMenu(String submenuName) {
+        globalStepAction.selectsubMenu(submenuName);
+    }
 }

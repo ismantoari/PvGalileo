@@ -112,5 +112,7 @@ public class GlobalStepAction {
         Action.selectListDropdown(Global.dropdownList(targetValue));
     }
 
-
+    public void selectsubMenu(String submenuName){
+        Action.click(Global.Submenu(submenuName));
+    }
 }

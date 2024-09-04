@@ -52,6 +52,9 @@ public class Global {
         return By.xpath("//li[text()='"+targetValue+"']");
     }
 
+    public static By Submenu(String submenuName) {
+        return By.xpath("//*[@role='button']/descendant::*[text()='" + submenuName + "'] && [class()=' MuiListItemText-root css-xdiy5h ']");
+    }
 
 }
 
