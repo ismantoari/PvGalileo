@@ -105,8 +105,10 @@ public class GlobalStepdefs {
         Thread.sleep(200);
     }
 
-    @And("user select sub sub menu {string}")
-    public void userSelectsubSubMenu(String submenuName) {
-        globalStepAction.selectsubMenu(submenuName);
+
+
+    @And("user select sub menu {string} on menu {string}")
+    public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
+        globalStepAction.selectSubmenu(menuName,submenuName);
     }
 }

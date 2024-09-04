@@ -52,10 +52,9 @@ public class Global {
         return By.xpath("//li[text()='"+targetValue+"']");
     }
 
-    public static By Submenu(String submenuName) {
-        return By.xpath("//*[@role='button']/descendant::*[text()='" + submenuName + "'] && [class()=' MuiListItemText-root css-xdiy5h ']");
+    public static By Submenu (String Menu, String Submenu){
+        return By.xpath("(//*[@role='button']//[text()='"+Menu+"']//parent::div/following-sibling::div/descendant::div[text()='"+Submenu+"'])//parent::span/preceding-sibling::span");
     }
-
 }
 
 
