@@ -1,12 +1,15 @@
 package stepdefs;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.junit.rules.ExpectedException;
+import pagesAction.LoyaltyAction;
 import pagesAction.LoyaltyAddMembershipAction;
 import pagesAction.LoyaltyAddAction;
 
 
 public class LoyaltyStepdefs {
+    LoyaltyAction loyaltyAction = new LoyaltyAction();
 
     LoyaltyAddAction loyaltyAddAction = new LoyaltyAddAction();
     LoyaltyAddMembershipAction loyaltyAddMembershipAction = new LoyaltyAddMembershipAction();
@@ -61,5 +64,21 @@ public class LoyaltyStepdefs {
     @And("user input Reward Description of reward list {string} with value {string}")
     public void userInputRewardDescriptionOfRewardListWithValue(String rowList, String inputValue)throws Exception {
         loyaltyAddMembershipAction.userInputRewardDescriptionOfRewardListWithValue(rowList,inputValue);
+    }
+
+    @Then("verify created new loyalty name {string}")
+    public void verifyCreatedNewLoyaltyName(String loyaltyName) {
+        loyaltyAction.verifyCreatedNewLoyaltyName(loyaltyName);
+
+    }
+
+    @Then("user on add loyalty page")
+    public void userOnAddLoyaltyPage(String expectedURL) {
+        loyaltyAction.userOnAddLoyaltyPage(expectedURL);
+    }
+
+    @And("user edit membership {string}")
+    public void userEditMembership(String membershipLevelName) {
+        loyaltyAddAction.userEditMembership(membershipLevelName);
     }
 }

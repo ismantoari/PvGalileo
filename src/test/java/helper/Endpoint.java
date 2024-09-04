@@ -10,4 +10,14 @@ public class Endpoint {
     public static final String hostGalileo = url + ":"  + port;
 
 
+    // ---------- LIST OF GALILEO PAGE ------------------
+    public static final String dashboard = hostGalileo + "/dashboard";
+
+    public static final String loyalty = hostGalileo + "/loyalty-program/loyalty";
+
+    public static final String addLoyalty = hostGalileo + "/loyalty-program/loyalty/add";
+
+
+
+
 }

@@ -19,7 +19,7 @@ public class GlobalStepdefs {
     }
 
     @Then("user is on {string} page")
-    public void userIsOnPage(String urlTarget) {
+    public void userIsOnPage(String urlTarget) throws Exception{
         globalStepAction.verifyURL(urlTarget);
     }
 
@@ -99,6 +99,21 @@ public class GlobalStepdefs {
         Thread.sleep(200);
     }
 
+
+    @And("user search {string}")
+    public void userSearch(String searchText) {
+        globalStepAction.userSearch(searchText);
+    }
+
+    @And("user click burger menu")
+    public void userClickBurgerMenu() {
+        globalStepAction.userClickBurgerMenu();
+    }
+
+    @And("user click list {string}")
+    public void userClickList(String targetName) {
+        globalStepAction.userClickList(targetName);
+=======
     @And("user click buttonDrop {string} and select value {string}")
     public void userClickButtonDropAndSelectValue(String buttonName, String targetValue) throws Exception {
         globalStepAction.userClickbuttonDropAndSelectValue(buttonName, targetValue);
@@ -110,5 +125,6 @@ public class GlobalStepdefs {
     @And("user select sub menu {string} on menu {string}")
     public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
         globalStepAction.selectSubmenu(menuName,submenuName);
+
     }
 }

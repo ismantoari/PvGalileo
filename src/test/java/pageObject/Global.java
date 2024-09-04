@@ -52,9 +52,20 @@ public class Global {
         return By.xpath("//li[text()='"+targetValue+"']");
     }
 
+
+    public static By errorMsgMandatoryField (String text){
+        return By.xpath("//p[text()='"+text+"']");
+    }
+
+    public static By searchBox = By.xpath("//input[@placeholder='Search']");
+    public static By burgerMenu = By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1lymf83']//child::button");
+
+
+=======
     public static By Submenu (String Menu, String Submenu){
         return By.xpath("(//*[@role='button']//[text()='"+Menu+"']//parent::div/following-sibling::div/descendant::div[text()='"+Submenu+"'])//parent::span/preceding-sibling::span");
     }
+
 }
 
 

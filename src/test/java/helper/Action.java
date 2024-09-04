@@ -13,7 +13,7 @@ import pageObject.LoyaltyAddMembership;
 import java.time.Duration;
 
 import static helper.BaseTest.driver;
-import static helper.Endpoint.hostGalileo;
+import static helper.Endpoint.*;
 
 public class Action {
 
@@ -109,8 +109,32 @@ public class Action {
 
     public static void verifyURL(String pageURL) {
         String actualUrl = driver.getCurrentUrl();
-        String expectedURL = hostGalileo + "/" + pageURL;
-        Assert.assertEquals(expectedURL, actualUrl);
+
+
+        switch (pageURL) {
+            case "dasboard" -> {
+                Assert.assertEquals(dashboard, actualUrl);
+                break;
+            }
+
+        case "Loyalty" -> {
+            Assert.assertEquals(loyalty, actualUrl);
+            break;
+        }
+        case "Add Loyalty" -> {
+            Assert.assertEquals(addLoyalty, actualUrl);
+            break;
+            }
+        }
+    }
+
+    public static void verifyEqualsText(String actualText, String expectedText){
+        Assert.assertEquals(actualText, expectedText);
+    }
+
+
+    public static void verifyNotEqualsText (String actualText, String expectedText){
+        Assert.assertNotEquals(actualText, expectedText );
     }
 
     public static void openWeb(){
