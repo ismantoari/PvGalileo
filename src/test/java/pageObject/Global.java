@@ -1,5 +1,6 @@
 package pageObject;
 
+import io.cucumber.java.da.Men;
 import org.openqa.selenium.By;
 
 public class Global {
@@ -59,6 +60,11 @@ public class Global {
 
     public static By searchBox = By.xpath("//input[@placeholder='Search']");
     public static By burgerMenu = By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1lymf83']//child::button");
+
+    public static By subMenu (String menuName , String subMenuName){
+       return By.xpath("//*[text()='"+ menuName +"'])/parent::div/following-sibling::div//child::div[text()='"+subMenuName+"']");
+    }
+
 
 
 =======
