@@ -162,14 +162,16 @@ Feature: Loyalty Program - Loyalty
     And user select language "English"
     And user select menu "Loyalty Program"
     And user select sub menu "Loyalty"
-    And user search "Loyalty SQA"
+    And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
     And stop
     And user click button "Add" of payment method "QRIS"
-    And user click dropdown applied payment method "QRIS" row "1" with value "Monei"
-    When user click button "Save Change"
-    Then show alert pop up "Update Loyalty program Success"
+    And stop
+    And user click dropdown applied payment method "QRIS" row "1" with value "Allo"
+    And stop
+    When user click button "Save Changes"
+    Then show alert pop up "Update Loyalty program success"
 
 
 
