@@ -157,7 +157,7 @@ Feature: Loyalty Program - Loyalty
 
 
   @web
-  Scenario: Edit Loyalty Program
+  Scenario: Edit Loyalty Program From All Payment Method to QRIS Monei only
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"
@@ -165,9 +165,12 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA"
     And user click burger menu
     And user click list "Edit"
-    And user edit membership "bronze Member"
+    And stop
+    And user click button "Add" of payment method "QRIS"
+    And user click dropdown applied payment method "QRIS" row "1" with value "Monei"
+    When user click button "Save Change"
+    Then show alert pop up "Update Loyalty program Success"
 
-  And stop
 
 
 

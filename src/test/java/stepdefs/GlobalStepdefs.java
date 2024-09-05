@@ -113,4 +113,5 @@ public class GlobalStepdefs {
     public void userClickList(String targetName) {
         globalStepAction.userClickList(targetName);
     }
+
 }
