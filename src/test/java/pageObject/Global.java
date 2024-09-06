@@ -53,6 +53,7 @@ public class Global {
         return By.xpath("//li[text()='"+targetValue+"']");
     }
 
+
     public static By errorMsgMandatoryField (String text){
         return By.xpath("//p[text()='"+text+"']");
     }
@@ -63,6 +64,11 @@ public class Global {
 
 
 
+
+=======
+    public static By Submenu (String Menu, String Submenu){
+        return By.xpath("(//*[@role='button']//[text()='"+Menu+"']//parent::div/following-sibling::div/descendant::div[text()='"+Submenu+"'])//parent::span/preceding-sibling::span");
+    }
 
 }
 

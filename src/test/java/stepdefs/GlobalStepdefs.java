@@ -99,6 +99,7 @@ public class GlobalStepdefs {
         Thread.sleep(200);
     }
 
+
     @And("user search {string}")
     public void userSearch(String searchText) {
         globalStepAction.userSearch(searchText);
@@ -112,6 +113,19 @@ public class GlobalStepdefs {
     @And("user click list {string}")
     public void userClickList(String targetName) {
         globalStepAction.userClickList(targetName);
+=======
+    @And("user click buttonDrop {string} and select value {string}")
+    public void userClickButtonDropAndSelectValue(String buttonName, String targetValue) throws Exception {
+        globalStepAction.userClickbuttonDropAndSelectValue(buttonName, targetValue);
+        Thread.sleep(200);
+    }
+
+
+
+    @And("user select sub menu {string} on menu {string}")
+    public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
+        globalStepAction.selectSubmenu(menuName,submenuName);
+
     }
 
 }

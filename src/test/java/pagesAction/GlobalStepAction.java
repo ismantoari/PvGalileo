@@ -1,6 +1,5 @@
 package pagesAction;
 
-import org.junit.experimental.theories.Theories;
 import pageObject.*;
 import helper.Action;
 import helper.Endpoint;
@@ -35,6 +34,10 @@ public class GlobalStepAction {
 
     public void selectMenu(String menuName){
         Action.click(Global.menu(menuName));
+    }
+
+    public void selectSubmenu(String menuName, String Submenus){
+        Action.click(Global.Submenu(menuName,Submenus));
     }
 
     public void clickButton(String buttonName)throws Exception{
@@ -107,6 +110,7 @@ public class GlobalStepAction {
         Action.selectListDropdown(Global.dropdownList(targetValue));
     }
 
+
     public void userSearch(String searchText){
         Action.inputText(Global.searchBox,searchText);
     }
@@ -117,6 +121,12 @@ public class GlobalStepAction {
 
     public void userClickList(String targetName){
         Action.click(Global.dropdownList(targetName));
+=======
+    public void userClickbuttonDropAndSelectValue(String buttonName, String targetValue) throws Exception{
+        Action.click(Global.button(buttonName));
+        Thread.sleep(200);
+        Action.selectListDropdown(Global.dropdownList(targetValue));
+
     }
 
 
