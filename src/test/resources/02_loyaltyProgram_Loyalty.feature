@@ -306,8 +306,7 @@ Feature: Loyalty Program - Loyalty
 
 
   @web
-  Scenario: Edit Loyalty Program
-=======
+  Scenario: Edit Loyalty Program From All Payment Method to QRIS Monei only
     And user upload loyalty logo "D:\PQA.jpg"
     And user input text box "Loyalty Name *" with value "Loyalty SQA 4"
     And user input text box "Point(s) to Rupiah Ratio *" with value "4"
@@ -415,20 +414,23 @@ Feature: Loyalty Program - Loyalty
     And user select language "English"
     And user select menu "Loyalty Program"
     And user select sub menu "Loyalty"
-
-    And user search "Loyalty SQA"
+    And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    And user edit membership "bronze Member"
+    And stop
+    And user click button "Add" of payment method "QRIS"
+    And stop
+    And user click dropdown applied payment method "QRIS" row "1" with value "Allo"
+    And stop
+    When user click button "Save Changes"
+    Then show alert pop up "Update Loyalty program success"
 
-  And stop
 
 
 
 
   @web
   Scenario: Delete Loyalty Program
-=======
     And user click button "Add Loyalty"
     And user upload loyalty logo "D:\PQA.jpg"
     And user input text box "Loyalty Name *" with value "Loyalty SQA 1"
@@ -483,8 +485,6 @@ Feature: Loyalty Program - Loyalty
 
 
 
-
-=======
     And user click button "Add Loyalty"
     And user upload loyalty logo "D:\PQA.jpg"
     And user input text box "Loyalty Name *" with value "Loyalty SQA 1"

@@ -81,4 +81,14 @@ public class LoyaltyStepdefs {
     public void userEditMembership(String membershipLevelName) {
         loyaltyAddAction.userEditMembership(membershipLevelName);
     }
+
+    @And("user click button {string} of payment method {string}")
+    public void userClickButtonOfPaymentMethod(String buttonName, String paymentMethodName) {
+        loyaltyAddAction.userClickButtonOfPaymentMethod(paymentMethodName, buttonName);
+    }
+
+    @And("user click dropdown applied payment method {string} row {string} with value {string}")
+    public void userClickDropdownAppliedPaymentMethodRowWithValue(String paymentMethodName, String row , String value) {
+        loyaltyAddAction.userClickDropdownAppliedPaymentMethodRowWithValue(paymentMethodName, row , value);
+    }
 }
