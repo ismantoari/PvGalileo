@@ -61,11 +61,12 @@ public class Global {
     public static By searchBox = By.xpath("//input[@placeholder='Search']");
     public static By burgerMenu = By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1lymf83']//child::button");
 
+    public static By subMenu (String menuName , String subMenuName){
+       return By.xpath("//*[text()='"+ menuName +"'])/parent::div/following-sibling::div//child::div[text()='"+subMenuName+"']");
+    }
 
 
 
-
-=======
     public static By Submenu (String Menu, String Submenu){
         return By.xpath("(//*[@role='button']//[text()='"+Menu+"']//parent::div/following-sibling::div/descendant::div[text()='"+Submenu+"'])//parent::span/preceding-sibling::span");
     }

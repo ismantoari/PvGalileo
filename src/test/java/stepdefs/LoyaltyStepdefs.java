@@ -77,18 +77,31 @@ public class LoyaltyStepdefs {
         loyaltyAction.userOnAddLoyaltyPage(expectedURL);
     }
 
-    @And("user edit membership {string}")
-    public void userEditMembership(String membershipLevelName) {
-        loyaltyAddAction.userEditMembership(membershipLevelName);
-    }
 
-    @And("user click button {string} of payment method {string}")
-    public void userClickButtonOfPaymentMethod(String buttonName, String paymentMethodName) {
-        loyaltyAddAction.userClickButtonOfPaymentMethod(paymentMethodName, buttonName);
-    }
+//
+//    @And("user edit Membership Level Name {string}")
+//    public void userEditMembershipLevelName(String membership) {
+//        loyaltyAction.userEditMembershipLevelName(membership);
+//    }
+//
+//    @And("user click button {string} of payment method {string}")
+//    public void clickButtonOfPaymentMethod(String paymentMethod, String buttonName) {
+//        loyaltyAction.clickButtonPaymentMethod(buttonName, paymentMethod);
+//    }
 
-    @And("user click dropdown applied payment method {string} row {string} with value {string}")
-    public void userClickDropdownAppliedPaymentMethodRowWithValue(String paymentMethodName, String row , String value) {
-        loyaltyAddAction.userClickDropdownAppliedPaymentMethodRowWithValue(paymentMethodName, row , value);
-    }
+
+//    @And("user click dropdown payment method {string} {string} with value {string}")
+//    public void userClickDropdownPaymentMethodWithValue(String dropdownPaymentMethodName, String row, String dropdownPaymentMethodValue) {
+//    loyaltyAction.userClickDropdownPaymentMethodWithValue( dropdownPaymentMethodName, row,dropdownPaymentMethodValue);
+//    }
+//
+//    @And("user click button {string} of payment method {string}")
+//    public void userClickButtonOfPaymentMethod(String buttonName, String paymentMethodName) {
+//        loyaltyAddAction.userClickButtonOfPaymentMethod(paymentMethodName, buttonName);
+//    }
+
+//    @And("user click dropdown applied payment method {string} row {string} with value {string}")
+//    public void userClickDropdownAppliedPaymentMethodRowWithValue(String paymentMethodName, String row , String value) {
+//        loyaltyAddAction.userClickDropdownAppliedPaymentMethodRowWithValue(paymentMethodName, row , value);
+//    }
 }

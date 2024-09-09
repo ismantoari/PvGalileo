@@ -1,5 +1,24 @@
 Feature: Payment Issuer - Issuer
 
+# Check Bank page
+  @web
+  Scenario: Check Bank Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Issuer"
+    Then user is on "issuer" page
+
+    # Check Bank Add page
+  @web
+  Scenario: Check Bank Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Issuer"
+    And user click buttonDrop "Add" and select value "Bank"
+    Then user is on "add issuer" page
+
 # add Bank
   @web
   Scenario: Add Bank

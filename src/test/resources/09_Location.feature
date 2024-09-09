@@ -24,8 +24,8 @@ Feature: Location
     And user input text box "PIC Name *" with value "Satrowijoyo"
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
-#    And user click button "Add Location"
-    And stop
+    When user click button "Add Location"
+    Then show alert pop up "Add Location Success"
 
 # cancel add location
   @web
@@ -51,8 +51,9 @@ Feature: Location
     And user input text box "PIC Name *" with value "Satrowijoyo"
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
-#    And user click button "Cancel"
-    And stop
+    When user click button "Cancel"
+    Then user is on "location" page
+    Then stop
 
 # add existing Location
   @web

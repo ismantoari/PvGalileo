@@ -105,7 +105,7 @@ Feature: Loyalty Program - Voucher
     And user click combo box check box "Merchant" and select value "Butler's Steak"
     #Voucher Time - get voucher
     And user click button "Add All Day"
-    And user
+#    And user
     #Voucher Time - Redeem Voucher
     And user click button "Same as get voucher"
 

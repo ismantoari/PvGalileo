@@ -9,20 +9,5 @@ public class LoyaltyAdd {
         return By.xpath("//td[text()='"+membershipLevelName+"']//following-sibling::td[4]//child::button");
     }
 
-    public static By burgerButtonMembershipLevelName(String levelName){
-        return By.xpath("(//span[text()='Level Name']/ancestor::thead/following-sibling::tbody/child::tr/child::td[text()='bronze'])/following-sibling::td[4]/child::*");
-    }
-
-    public static By buttonAddAppliedPaymentMethod (String paymentName, String buttonName){
-        return By.xpath("//p[text()='"+paymentName+"']/following-sibling::div/child::button[text()='"+buttonName+"']");
-    }
-
-    public static By dropdownAppliedPaymentMethod (String row, String paymentMethodName){
-        return By.xpath("(//label[text()='"+paymentMethodName+"']/following-sibling::div/child::label[text()='"+paymentMethodName+"']/following-sibling::div)["+row+"]");
-    }
-
-
-
-
 
 }

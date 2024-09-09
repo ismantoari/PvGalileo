@@ -7,7 +7,7 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user click buttonDrop "Add" and select value "Bank"
+#    And user click buttonDrop "Add" and select value "Bank"
     #Payment Method Detail
     And user click combo box "Bank Name *" and select value "Mandiri"
     And user input text box "Payment Method Name *" with value "PQAPayment"

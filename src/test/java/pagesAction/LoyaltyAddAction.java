@@ -23,30 +23,29 @@ public class LoyaltyAddAction {
 
     }
 
-    public void userEditMembership(String membershipLevelName){
-        Action.click(LoyaltyAdd.burgerButtonMembershipLevel(membershipLevelName));
-    }
-    public void userClickButtonOfPaymentMethod(String paymentMethodName , String buttonName){
-        Action.click(LoyaltyAdd.buttonAddAppliedPaymentMethod(paymentMethodName, buttonName));
 
     }
+//    public void userClickButtonOfPaymentMethod(String paymentMethodName , String buttonName){
+//        Action.click(LoyaltyAdd.buttonAddAppliedPaymentMethod(paymentMethodName, buttonName));
+//
+//    }
+//
+//    public void userClickDropdownAppliedPaymentMethodRowWithValue(String paymentMethodName, String row , String targetQRISValue) {
+//
+//        String currentQRISvalue = Action.getText(LoyaltyAdd.dropdownAppliedPaymentMethod(row, paymentMethodName));
+//        System.out.println(currentQRISvalue);
+//
+//
+//        if (currentQRISvalue.equalsIgnoreCase(targetQRISValue)){
+//            System.out.println("equal");
+//        }
+//        else {
+//            Action.click(LoyaltyAdd.dropdownAppliedPaymentMethod (row,paymentMethodName));
+//            Action.click(Global.dropdownList(targetQRISValue));
+//        }
+//
+//
+//
 
-    public void userClickDropdownAppliedPaymentMethodRowWithValue(String paymentMethodName, String row , String targetQRISValue) {
 
-        String currentQRISvalue = Action.getText(LoyaltyAdd.dropdownAppliedPaymentMethod(row, paymentMethodName));
-        System.out.println(currentQRISvalue);
-
-
-        if (currentQRISvalue.equalsIgnoreCase(targetQRISValue)){
-            System.out.println("equal");
-        }
-        else {
-            Action.click(LoyaltyAdd.dropdownAppliedPaymentMethod (row,paymentMethodName));
-            Action.click(Global.dropdownList(targetQRISValue));
-        }
-
-
-    }
-
-
-}
+//}

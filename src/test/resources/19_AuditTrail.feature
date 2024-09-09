@@ -1,5 +1,13 @@
 Feature: Audit Trail
-
+  
+#  check page audit trail
+  @web
+  Scenario: Check Audit Trail Page
+    Given user already login as administrator
+    And user select language "English"
+    When user select menu "Audit Trail"
+    Then user is on "audit trail" page
+  
 #check audit trail
   @web
   Scenario: Check Audit Trail
@@ -8,9 +16,9 @@ Feature: Audit Trail
     And user select menu "Audit Trail"
     And user input text box predefine "Date Time" with value "03-09-2024"
     And user click combo box "User Name" and select value "administrator"
-    And user click button "Search"
-    And stop
-    And stop
+    When user click button "Search"
+    Then stop
+    Then stop
 
 #download audit trail
   @web
@@ -21,5 +29,5 @@ Feature: Audit Trail
     And user input text box predefine "Date Time" with value "03-09-2024"
     And user click combo box "User Name" and select value "administrator"
     And user click button "Search"
-    And user click button " CSV"
-    And stop
+    When user click button " CSV"
+    Then stop

@@ -19,12 +19,12 @@ public class GlobalStepdefs {
     }
 
     @Then("user is on {string} page")
-    public void userIsOnPage(String urlTarget) throws Exception{
+    public void userIsOnPage(String urlTarget) throws Exception {
         globalStepAction.verifyURL(urlTarget);
     }
 
     @Given("user already login as administrator")
-    public void userAlreadyLoginAsAdministrator() throws Exception{
+    public void userAlreadyLoginAsAdministrator() throws Exception {
         globalStepAction.userAlreadyLoginAsAdministrator();
     }
 
@@ -44,20 +44,19 @@ public class GlobalStepdefs {
     }
 
     @And("user click button {string}")
-    public void userClickButton(String buttonName)throws Exception {
+    public void userClickButton(String buttonName) throws Exception {
         globalStepAction.clickButton(buttonName);
     }
 
     @And("user input text box {string} with value {string}")
-    public void userInputTextBoxWithValue(String textBoxName, String textBoxValue) throws Exception{
+    public void userInputTextBoxWithValue(String textBoxName, String textBoxValue) throws Exception {
         Thread.sleep(200);
         globalStepAction.inputTextBox(textBoxName, textBoxValue);
     }
 
 
-
     @And("user input text box predefine {string} with value {string}")
-    public void userInputTextBoxPredefineWithValue(String textBoxName, String textBoxValue) throws Exception{
+    public void userInputTextBoxPredefineWithValue(String textBoxName, String textBoxValue) throws Exception {
         Thread.sleep(200);
         globalStepAction.inputTextBoxPredefine(textBoxName, textBoxValue);
     }
@@ -113,19 +112,23 @@ public class GlobalStepdefs {
     @And("user click list {string}")
     public void userClickList(String targetName) {
         globalStepAction.userClickList(targetName);
-=======
+    }
+
     @And("user click buttonDrop {string} and select value {string}")
     public void userClickButtonDropAndSelectValue(String buttonName, String targetValue) throws Exception {
         globalStepAction.userClickbuttonDropAndSelectValue(buttonName, targetValue);
         Thread.sleep(200);
     }
 
-
-
-    @And("user select sub menu {string} on menu {string}")
-    public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
-        globalStepAction.selectSubmenu(menuName,submenuName);
-
+    @And("user input text area predefine {string} with value {string}")
+    public void userInputTextAreaPredefineWithValue(String textAreaName, String inputValue) {
+        globalStepAction.userInputTextAreaWithValuePredifine(textAreaName, inputValue);
     }
-
 }
+
+//@And("user select sub menu {string} on menu {string}")
+//public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
+//    globalStepAction.selectSubmenu(menuName, submenuName);
+//
+//}
+

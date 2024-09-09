@@ -112,20 +112,137 @@ public class Action {
 
 
         switch (pageURL) {
-            case "dasboard" -> {
+//      dashboard
+        case "dasboard" -> {
                 Assert.assertEquals(dashboard, actualUrl);
                 break;
             }
-
-        case "Loyalty" -> {
+//      loyalty
+        case "loyalty" -> {
             Assert.assertEquals(loyalty, actualUrl);
             break;
         }
-        case "Add Loyalty" -> {
+        case "add loyalty" -> {
             Assert.assertEquals(addLoyalty, actualUrl);
             break;
             }
+//      issuer
+        case "issuer" -> {
+                Assert.assertEquals(issuer, actualUrl);
+                break;
+            }
+        case "add Issuer" -> {
+                Assert.assertEquals(addIssuer, actualUrl);
+                break;
+            }
+//      member
+        case "member" -> {
+                Assert.assertEquals(member, actualUrl);
+                break;
+            }
+        case "add Member" -> {
+                Assert.assertEquals(addMember, actualUrl);
+                break;
+            }
+//      promo
+        case "promo" -> {
+                Assert.assertEquals(promo, actualUrl);
+                break;
+            }
+        case "add promo" -> {
+                Assert.assertEquals(addPromo, actualUrl);
+                break;
+            }
+//      voucher
+        case "voucher" -> {
+                Assert.assertEquals(voucher, actualUrl);
+                break;
+            }
+        case "add voucher" -> {
+                Assert.assertEquals(addVoucher, actualUrl);
+                break;
+            }
+//      payment method
+        case "payment method" -> {
+                Assert.assertEquals(paymentMethod, actualUrl);
+                break;
+            }
+        case "add payment method bank" -> {
+                Assert.assertEquals(addPaymentMethodBank, actualUrl);
+                break;
+            }
+        case "add payment method qris" -> {
+                Assert.assertEquals(addPaymentMethodWallet, actualUrl);
+                break;
+            }
+        case "add payment method bnpl" -> {
+                Assert.assertEquals(addPaymentMethodBNPL, actualUrl);
+                break;
+            }
+//      bin
+        case "BIN" -> {
+                Assert.assertEquals(BIN, actualUrl);
+                break;
+            }
+        case "add BIN" -> {
+                Assert.assertEquals(addBIN, actualUrl);
+                break;
+            }
+//      report
+        case "loyalty program summary" -> {
+            Assert.assertEquals(reportLPSummary, actualUrl);
+            break;
         }
+        case "loyalty program detail" -> {
+                Assert.assertEquals(reportLPDetail, actualUrl);
+                break;
+            }
+        case "loyalty program voucher usage" -> {
+                Assert.assertEquals(reportLPVoucherUsage, actualUrl);
+                break;
+            }
+        case "loyalty program member" -> {
+                Assert.assertEquals(reportLPMember, actualUrl);
+                break;
+            }
+        case "merchant summary" -> {
+                Assert.assertEquals(reportMerchantSummary, actualUrl);
+                break;
+            }
+        case "merchant detail" -> {
+                Assert.assertEquals(reportMerchantDetail, actualUrl);
+                break;
+            }
+//      audit trail
+        case "audit trail" -> {
+                Assert.assertEquals(auditTrail, actualUrl);
+                break;
+            }
+//      location
+        case "location" -> {
+                Assert.assertEquals(location, actualUrl);
+                break;
+            }
+        case "add location" -> {
+                Assert.assertEquals(addLocation, actualUrl);
+                break;
+            }
+//      transaction history
+        case "transaction history" -> {
+                Assert.assertEquals(transactionHistory, actualUrl);
+                break;
+            }
+//      merchant type
+        case "merchant type" -> {
+                Assert.assertEquals(merchantType, actualUrl);
+                break;
+            }
+        case "add merchant type" -> {
+                Assert.assertEquals(addMerchantType, actualUrl);
+                break;
+            }
+    }
+
     }
 
     public static void verifyEqualsText(String actualText, String expectedText){

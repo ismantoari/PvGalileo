@@ -4,8 +4,7 @@ import helper.Action;
 import pageObject.Menu;
 
 public class MenuAction {
-
-    public void userClickSubMenuReport(String subMenuName){
+    public void userClickSUbMenuReport(String subMenuName) {
         Action.click(Menu.subMenuReport(subMenuName));
     }
 }

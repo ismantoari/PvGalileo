@@ -36,9 +36,9 @@ public class GlobalStepAction {
         Action.click(Global.menu(menuName));
     }
 
-    public void selectSubmenu(String menuName, String Submenus){
-        Action.click(Global.Submenu(menuName,Submenus));
-    }
+//    public void selectSubmenu(String menuName, String Submenus){
+//        Action.click(Global.subMenu(menuName,Submenus));
+//    }
 
     public void clickButton(String buttonName)throws Exception{
         Thread.sleep(200);
@@ -53,6 +53,12 @@ public class GlobalStepAction {
     public void inputTextBoxPredefine(String textBoxMark, String inputValue) {
         Action.manualClearText(Global.textBox(textBoxMark));
         Action.inputText(Global.textBox(textBoxMark),inputValue);
+    }
+
+    public void userInputTextAreaWithValuePredifine(String textAreaName, String inputValue) {
+        Action.manualClearText(Global.textArea(textAreaName));
+        Action.click(Global.textArea(textAreaName));
+        Action.inputText(Global.textArea(textAreaName),inputValue);
     }
 
 
@@ -119,9 +125,10 @@ public class GlobalStepAction {
         Action.click(Global.burgerMenu);
     }
 
-    public void userClickList(String targetName){
+    public void userClickList(String targetName) {
         Action.click(Global.dropdownList(targetName));
-=======
+    }
+
     public void userClickbuttonDropAndSelectValue(String buttonName, String targetValue) throws Exception{
         Action.click(Global.button(buttonName));
         Thread.sleep(200);
@@ -131,3 +138,5 @@ public class GlobalStepAction {
 
 
 }
+
+

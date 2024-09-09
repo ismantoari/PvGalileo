@@ -1,4 +1,14 @@
-Feature: Report - Loyalty Program - Summary
+Feature: Report - Loyalty Program - Detail
+
+
+#  check loyalty program summary page
+  Scenario: Check Loyalty Program Detail Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Report"
+    And user click sub menu report "Loyalty Program"
+    When user select sub menu "Detail"
+    Then user is on "loyalty program detail" page
 
 #Download Specific Date
   @web
@@ -6,7 +16,7 @@ Feature: Report - Loyalty Program - Summary
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
-#   And user select sub menu "Loyalty Program"
+    And user click sub menu report "Loyalty Program"
     And user select sub menu "Detail"
     And user click combo box "Loyalty Program" and select value "PVS Loyalty"
     And user click dropdown "Period" and select value "Specific Date"
@@ -20,12 +30,12 @@ Feature: Report - Loyalty Program - Summary
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
-#   And user select sub menu "Loyalty Program"
+    And user click sub menu report "Loyalty Program"
     And user select sub menu "Detail"
     And user click combo box "Loyalty Program" and select value "PVS Loyalty"
     And user click dropdown "Period" and select value "Weekly"
     And user input text box predefine "Date Time" with value "03-09-2024"
-    And user click button "Download"
+    When user click button "Download"
     And stop
 
 #Download Monthly
@@ -34,10 +44,10 @@ Feature: Report - Loyalty Program - Summary
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
-#   And user select sub menu "Loyalty Program"
+    And user click sub menu report "Loyalty Program"
     And user select sub menu "Detail"
     And user click combo box "Loyalty Program" and select value "PVS Loyalty"
     And user click dropdown "Period" and select value "Monthly"
     And user input text box predefine "Date Time" with value "03-09-2024"
-    And user click button "Download"
-    And stop
+    When user click button "Download"
+    Then stop

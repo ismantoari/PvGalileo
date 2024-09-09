@@ -1,14 +1,13 @@
 package stepdefs;
-
 import io.cucumber.java.en.And;
 import pagesAction.MenuAction;
 
 public class MenuStepdefs {
+        MenuAction menuAction = new MenuAction();
 
-    MenuAction menuAction = new MenuAction();
-
-    @And("user click sub menu Report {string}")
+    @And("user click sub menu report {string}")
     public void userClickSubMenuReport(String subMenuName) {
-        menuAction.userClickSubMenuReport(subMenuName);
+        menuAction.userClickSUbMenuReport(subMenuName);
     }
+
 }

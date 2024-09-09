@@ -1,6 +1,27 @@
 Feature: Payment Issuer - BIN
 
-# positive case card type other
+# check BIN page
+  @web
+  Scenario: Check BIN Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "BIN"
+    Then user is on "BIN" page
+    Then stop
+
+#  check add BIN page
+  @web
+  Scenario: Check Add BIN Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "BIN"
+    When user click button "Add BIN"
+    Then user is on "add BIN" page
+    Then stop
+
+# positive case card type other - delete
   @web
   Scenario: Add BIN
     Given user already login as administrator
@@ -11,11 +32,12 @@ Feature: Payment Issuer - BIN
     And user click combo box "Issuer Name *" and select value "Mandiri"
     And user click dropdown "Card Type *" and select value "Other"
     And user input text box "BIN Label *" with value "Mandiri Visa Platinum"
-    And user input text box "BIN *" with value "5586"
-    And user click button "Add BIN"
-    And stop
+    And user input text box "BIN *" with value "556887"
+    When user click button "Add BIN"
+    Then show alert pop up "Insert BIN Success"
+    Then verify created new loyalty name "Mandiri Visa Platinum"
 
-# positive case card type credit
+# positive case card type credit - edit
   @web
   Scenario: Add BIN 2
     Given user already login as administrator
@@ -26,11 +48,30 @@ Feature: Payment Issuer - BIN
     And user click combo box "Issuer Name *" and select value "Mandiri"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "BRI Visa Gold"
-    And user input text box "BIN *" with value "5586"
-    And user click button "Add BIN"
-    And stop
+    And user input text box "BIN *" with value "558611"
+    When user click button "Add BIN"
+    Then show alert pop up "Insert BIN Success"
+    Then verify created new loyalty name "BRI Visa Gold"
 
 #Edit BIN
+  @web
+    Scenario: Edit BIN
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "BIN"
+    And user search "558611"
+    And user click burger menu
+    And user click list "Edit"
+    And user click combo box check box "Issuer Name *" and select value "BRI"
+    And user click dropdown "Card Type *" and select value "Other"
+    And user input text box predefine "BIN Label *" with value "BRI Mastercard Platinum"
+    And user input text box predefine "BIN *" with value "334011"
+    When user click button "Save Changes"
+    Then show alert pop up "Update BIN Success"
+    #for now use this, afterward will be change with more proper gherkin
+    Then verify created new loyalty name "BRI Mastercard Platinum"
+
 
 # Cancel add BIN
   @web
@@ -44,8 +85,8 @@ Feature: Payment Issuer - BIN
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "558677971"
-    And user click button "cancel"
-    And stop
+    When user click button "Cancel"
+    Then user is on "BIN" page
 
 # positive case search data
   @web
@@ -54,8 +95,8 @@ Feature: Payment Issuer - BIN
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
-    And user input text box "Search" with value "5586"
-    And stop
+    When user search "558611"
+    Then stop
 
 # positive case filter issuer name
   @web
@@ -64,27 +105,25 @@ Feature: Payment Issuer - BIN
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
-    And user click dropdown "Issuer Name" and select value "Mandiri"
-    And stop
-    And stop
+    When user click dropdown "Issuer Name" and select value "Mandiri"
+    Then stop
+    Then stop
+
+
 
 #Delete BIN
-
-# Negative case card type other already exists
   @web
-  Scenario: Add Existing BIN Name
+  Scenario: Delete BIN
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
-    And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
-    And user click dropdown "Card Type *" and select value "Other"
-    And user input text box "BIN Label *" with value "Mandiri Visa Platinum"
-    And user input text box "BIN *" with value "5588"
-    And user click button "Add BIN"
-    Then show alert pop up "Data Already Exist!"
-    And stop
+    And user search "558611"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete BIN Success"
+
 
 # Negative case card type other already exists
   @web
@@ -95,28 +134,27 @@ Feature: Payment Issuer - BIN
     And user select sub menu "BIN"
     And user click button "Add BIN"
     And user click combo box "Issuer Name *" and select value "Mandiri"
-    And user click dropdown "Card Type *" and select value "Other"
+    And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "Mandiri Visa Platina"
-    And user input text box "BIN *" with value "5586"
-    And user click button "Add BIN"
-    Then show alert pop up "Data Already Exist!"
-    And stop
+    And user input text box "BIN *" with value "558677971"
+    When user click button "Add BIN"
+    Then show alert pop up "BIN already registered"
 
-# negative case BIN more than 8
-#  @web
-#  Scenario: Add BIN more than 8 long
-#    Given user already login as administrator
-#    And user select language "English"
-#    And user select menu "Payment Issuer"
-#    And user select sub menu "BIN"
-#    And user click button "Add BIN"
-#    And user click combo box "Issuer Name *" and select value "Mandiri"
-#    And user click dropdown "Card Type *" and select value "Credit"
-#    And user input text box "BIN Label *" with value "BRI Visa Gold"
-#    And user input text box "BIN *" with value "558677971"
-#    And user click button "Add BIN"
-#    Then show alert pop up "BIN can't more than 8!"
-#    And stop
+
+# negative case BIN less than 6
+  @web
+  Scenario: Add BIN less than 6 long
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "BIN"
+    And user click button "Add BIN"
+    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click dropdown "Card Type *" and select value "Credit"
+    And user input text box "BIN Label *" with value "BRI Visa Gold"
+    And user input text box "BIN *" with value "22"
+    When user click button "Add BIN"
+    Then show alert pop up "Invalid parameter"
 
 # negative case all empty
   @web
@@ -126,7 +164,5 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click button "Add BIN"
-    And stop
-
-#delet BIN in use
+    When user click button "Add BIN"
+    Then stop
