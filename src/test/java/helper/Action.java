@@ -241,6 +241,65 @@ public class Action {
                 Assert.assertEquals(addMerchantType, actualUrl);
                 break;
             }
+//        product setup
+        case "product" -> {
+                Assert.assertEquals(productSetup, actualUrl);
+                break;
+            }
+        case "add add product" -> {
+                Assert.assertEquals(addProductSetup, actualUrl);
+                break;
+            }
+//        merchant list
+        case "merchant list" -> {
+                Assert.assertEquals(merchantList, actualUrl);
+                break;
+            }
+        case "add merchant list single" -> {
+                Assert.assertEquals(addMerchantListSingle, actualUrl);
+                break;
+            }
+        case "add merchant list multiple" -> {
+                Assert.assertEquals(addMerchantListMultiple, actualUrl);
+                break;
+            }
+//        UM - user
+        case "user" -> {
+                Assert.assertEquals(userUM, actualUrl);
+                break;
+            }
+        case "add user" -> {
+                Assert.assertEquals(addUserUM, actualUrl);
+                break;
+            }
+//        UM - group
+        case "group" -> {
+                Assert.assertEquals(groupUM, actualUrl);
+                break;
+            }
+        case "add group" -> {
+                Assert.assertEquals(addGroupUM, actualUrl);
+                break;
+            }
+//        UM - subgroup
+        case "subgroup" -> {
+                Assert.assertEquals(subgroupUM, actualUrl);
+                break;
+            }
+       case "add subgroup" -> {
+                Assert.assertEquals(addSubgroupUM, actualUrl);
+                break;
+            }
+//        UM - package
+       case "package" -> {
+                Assert.assertEquals(PakcageUM, actualUrl);
+                break;
+            }
+       case "add package" -> {
+                Assert.assertEquals(addPackageUM, actualUrl);
+                break;
+            }
+
     }
 
     }

@@ -1,5 +1,32 @@
 Feature: Merchant - Merchant List
 
+# check merchant list page
+  @web
+  Scenario: Check merchant list page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    When user select sub menu "Merchant List"
+    Then user is on "merchant list" page
+
+# check add merchant list page - single
+  @web
+  Scenario: check add merchant list page - single
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
+    When user click buttonDrop "Add" and select value "Single"
+    Then user is on "add merchant list single" page
+# check add merchant list page - multiple
+  @web
+  Scenario: check add merchant list page - multiple
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
+    When user click buttonDrop "Add" and select value "Multiple"
+    Then user is on "add merchant list multiple" page
 
 # add Merchant List Single
   @web
@@ -16,20 +43,22 @@ Feature: Merchant - Merchant List
     And user input text box "Alias Name *" with value "PQAM"
     And user click combo box "Merchant Type" and select value "FNB"
     And user click combo box "Merchant Parent" and select value "Butler's Steak"
+    And user click combo box "Postal Code *" and select value "23123"
     And user click combo box "Location" and select value "PIK"
     And user input text area "Address" with value "this is address"
     #Bank Account
     And user click combo box "Bank *" and select value "Mandiri"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID *" with value "881293123"
     #Merchant Representative
     And user click dropdown "PIC Type *" and select value "Business"
     And user input text box "PIC Name *" with value "Satrowijoyo"
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
-#    And user click button "Add Merchant"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "Insert merchant list success"
 
 # cancel add Merchant List Single
   @web
@@ -46,20 +75,56 @@ Feature: Merchant - Merchant List
     And user input text box "Alias Name *" with value "PQAM"
     And user click combo box "Merchant Type" and select value "FNB"
     And user click combo box "Merchant Parent" and select value "Butler's Steak"
+    And user click combo box "Postal Code *" and select value "12342"
     And user click combo box "Location" and select value "PIK"
     And user input text area "Address" with value "this is address"
     #Bank Account
     And user click combo box "Bank *" and select value "Mandiri"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID *" with value "8752981"
     #Merchant Representative
     And user click dropdown "PIC Type *" and select value "Business"
     And user input text box "PIC Name *" with value "Satrowijoyo"
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
-#    And user click button "Cancel"
-    And stop
+    When user click button "Cancel"
+    Then user is on "merchant list" page
+
+# Edit merchant list
+  @web
+  Scenario: Cancel Add Merchant Single
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
+    And user search "PQA Marketplace"
+    And user click burger menu
+    And user click list "Edit"
+    #Merchant Logo
+    And user upload loyalty logo "D:/PQA2.jpg"
+    #Merchant Detail
+    And user input text box predefine "Official Name *" with value "PQA Marketplace 2"
+    And user input text box predefine "Alias Name *" with value "PQAM2"
+    And user click combo box "Merchant Type" and select value "Food"
+    And user click combo box "Merchant Parent" and select value "Toma's Brasserie"
+    And user click combo box "Postal Code *" and select value "12313"
+    And user click combo box "Location" and select value "Chillax"
+    And user input text area "Address" with value "this is a new address"
+    #Bank Account
+    And user click combo box "Bank *" and select value "BNI"
+    And user input text box predefine "Bank Account Number *" with value "23114112"
+    #MID
+    And user click button add MID list
+    And user input text box predefine "MID *" with value "12314532"
+    #Merchant Representative
+    And user click dropdown "PIC Type *" and select value "Technical"
+    And user input text box predefine "PIC Name *" with value "Satrowajito"
+    And user input text box predefine "PIC Email *" with value "PQA2@gmail.com"
+    And user input text box predefine "PIC Phone Number *" with value "01203712832"
+    When user click button "Save Changes"
+    Then show alert pop up "Update merchant list success"
 
 # positive case search data
   @web
@@ -68,7 +133,7 @@ Feature: Merchant - Merchant List
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Merchant List"
-    And user input text box "Search" with value "Butler's Steak"
+    And user search "PQA Marketplace 2"
     And stop
 
 # positive case filter Merchant Type
@@ -78,7 +143,7 @@ Feature: Merchant - Merchant List
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Merchant List"
-    And user click dropdown "Merchant Type" and select value "FNB"
+    And user click dropdown "Merchant Type" and select value "Food"
     And stop
     And stop
 
@@ -103,7 +168,8 @@ Feature: Merchant - Merchant List
     And user click combo box "Bank *" and select value "Mandiri"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID" with value "234213213"
     #Merchant Representative
     # representative 1
     And user click dropdown "PIC Type *" and select value "Business"
@@ -111,13 +177,13 @@ Feature: Merchant - Merchant List
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     # representative 2
-#    And user click dropdown "PIC Type *" and select value "Business"
-#    And user input text box "PIC Name *" with value "Juwongso"
-#    And user input text box "PIC Email *" with value "PQA2@gmail.com"
-#    And user input text box "PIC Phone Number *" with value "088128961231"
+    And user click dropdown "PIC Type *" and select value "Business"
+    And user input text box "PIC Name *" with value "Juwongso"
+    And user input text box "PIC Email *" with value "PQA2@gmail.com"
+    And user input text box "PIC Phone Number *" with value "088128961231"
 
-#    And user click button "Add Merchant"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "representative already exists"
 
 # Add Existing Merchant Name with the same Location
   @web
@@ -128,26 +194,28 @@ Feature: Merchant - Merchant List
     And user select sub menu "Merchant List"
     And user click buttonDrop "Add" and select value "Single"
     #Merchant Logo
-    And user upload loyalty logo "D:/PQA.jpg"
+    And user upload loyalty logo "D:/PQA2.jpg"
     #Merchant Detail
-    And user input text box "Official Name *" with value "PQA Marketplace"
-    And user input text box "Alias Name *" with value "PQAM"
-    And user click combo box "Merchant Type" and select value "FNB"
-    And user click combo box "Merchant Parent" and select value "Butler's Steak"
-    And user click combo box "Location" and select value "PIK"
-    And user input text area "Address" with value "this is address"
+    And user input text box "Official Name *" with value "PQA Marketplace 2"
+    And user input text box "Alias Name *" with value "PQAM2"
+    And user click combo box "Merchant Type" and select value "Food"
+    And user click combo box "Merchant Parent" and select value "Toma's Brasserie"
+    And user click combo box "Postal Code *" and select value "12313"
+    And user click combo box "Location" and select value "Chillax"
+    And user input text area "Address" with value "this is a new address"
     #Bank Account
-    And user click combo box "Bank *" and select value "Mandiri"
-    And user input text box "Bank Account Number *" with value "10237123"
+    And user click combo box "Bank *" and select value "BNI"
+    And user input text box "Bank Account Number *" with value "23114112"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID *" with value "12314532"
     #Merchant Representative
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
-#    And user click button "Add Merchant"
-    And stop
+    And user click dropdown "PIC Type *" and select value "Technical"
+    And user input text box "PIC Name *" with value "Satrowajito"
+    And user input text box "PIC Email *" with value "PQA2@gmail.com"
+    And user input text box "PIC Phone Number *" with value "01203712832"
+    When user click button "Add Merchant"
+    Then show alert pop up "merchant list already exists"
 
 
 # Do not fill the required data
@@ -168,10 +236,11 @@ Feature: Merchant - Merchant List
     #Bank Account
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID" with value "881293123"
     #Merchant Representative
-#    And user click button "Add Merchant"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "invalid parameter"
 
 # Duplicate Merchant Representative
   @web
@@ -194,7 +263,8 @@ Feature: Merchant - Merchant List
     And user click combo box "Bank *" and select value "Mandiri"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
-#    And user click button Merchant "Add"
+    And user click button add MID list
+    And user input text box "MID" with value "881293123"
     #Merchant Representative
     # representative 1
     And user click dropdown "PIC Type *" and select value "Business"
@@ -207,32 +277,21 @@ Feature: Merchant - Merchant List
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
 
-#    And user click button "Add Merchant"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "Merchant list already exists"
 
 # add Merchant List Multiple
   @web
-  Scenario: Add Merchant Single
+  Scenario: Add Merchant Multiple
     Given user already login as administrator
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Merchant List"
     And user click buttonDrop "Add" and select value "Multiple"
     And user upload loyalty logo "D:/multiple_template.xlsx"
-#    And user click button "Add Merchant"
-    And stop
-
-# add Merchant List Multiple > 100 data
-  @web
-  Scenario: Add Merchant Multiple > 100 data
-    Given user already login as administrator
-    And user select language "English"
-    And user select menu "Merchant"
-    And user select sub menu "Merchant List"
-    And user click buttonDrop "Add" and select value "Multiple"
-    And user upload loyalty logo "D:/multiple_template100.xlsx"
-#    And user click button "Add Payment Method"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "Add merchant list success"
+    
 
 # add Merchant Multiple Invalid Format
   @web
@@ -243,5 +302,18 @@ Feature: Merchant - Merchant List
     And user select sub menu "Merchant List"
     And user click buttonDrop "Add" and select value "Multiple"
     And user upload loyalty logo "D:/multiple_templateInvalid.jpg"
-#    And user click button "Add Merchant"
-    And stop
+    When user click button "Add Merchant"
+    Then show alert pop up "invalid parameter"
+    
+# delete Merchant list
+  @web
+  Scenario: Delete Merchant List
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
+    And user search "PQA Marketplace 2"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete merchant list success"

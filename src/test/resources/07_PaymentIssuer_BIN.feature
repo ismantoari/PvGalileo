@@ -109,8 +109,6 @@ Feature: Payment Issuer - BIN
     Then stop
     Then stop
 
-
-
 #Delete BIN
   @web
   Scenario: Delete BIN
