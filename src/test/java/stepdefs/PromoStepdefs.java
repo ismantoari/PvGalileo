@@ -15,4 +15,6 @@ public class PromoStepdefs {
     public void userClickAddPromoCalculation(String promoType) throws Exception{
         promoAddAction.userClickAddPromoCalculation(promoType);
     }
+
+
 }

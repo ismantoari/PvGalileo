@@ -13,4 +13,6 @@ public class PromoAddAction {
         Action.click(Promo.addPromoCalculation(promoType));
         Thread.sleep(200);
     }
+
+
 }

@@ -124,11 +124,7 @@ public class GlobalStepdefs {
     public void userInputTextAreaPredefineWithValue(String textAreaName, String inputValue) {
         globalStepAction.userInputTextAreaWithValuePredifine(textAreaName, inputValue);
     }
+
+
+
 }
-
-//@And("user select sub menu {string} on menu {string}")
-//public void userSelectSubMenuOnMenu(String menuName, String submenuName) {
-//    globalStepAction.selectSubmenu(menuName, submenuName);
-//
-//}
-

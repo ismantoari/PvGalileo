@@ -34,4 +34,8 @@ public class LoyaltyAddMembership {
 
     }
 
+    public static By buttonSaveChangesLoyaltyAddMembership =  By.xpath("(//button[text()='Save Changes'])[2]");
+
 }
+
+

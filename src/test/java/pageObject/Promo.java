@@ -10,4 +10,6 @@ public class Promo {
         return By.xpath("//h6[text()='"+promoCategory+"']/following-sibling::button");
     }
 
+
+
 }
