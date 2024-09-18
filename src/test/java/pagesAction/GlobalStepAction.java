@@ -63,6 +63,7 @@ public class GlobalStepAction {
 
 
     public void inputTextBox(String textBoxMark, String inputValue) {
+
         if (textBoxMark.equalsIgnoreCase("Address")) {
             Action.click(Global.textArea(textBoxMark));
             Action.inputText(Global.textArea(textBoxMark), inputValue);

@@ -18,7 +18,8 @@ public class BaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
-        options.addArguments("--window-size=1280,720");
+        options.addArguments("force-device-scale-factor=0.5");
+        options.addArguments("high-dpi-support=0.5");
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
