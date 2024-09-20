@@ -113,4 +113,9 @@ public class LoyaltyStepdefs {
         loyaltyAction.userClickButtonMembership();
 
     }
+
+    @And("user click loyalty burger menu of {string}")
+    public void userClickBurgerMenuOf(String menuLoyalty) {
+        loyaltyAction.userClickBurgerMenuLoyaltyOf( menuLoyalty);
+    }
 }

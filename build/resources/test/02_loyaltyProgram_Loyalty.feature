@@ -411,3 +411,16 @@ Feature: Loyalty Program - Loyalty
     When user click button "Delete"
     Then show alert pop up "Delete Loyalty program success"
 
+# Edit loyalty when more than 2 loyalty on list
+    @web
+    Scenario: Edit loyalty when more than 2 loyalty on list
+      Given user already login as administrator
+      And user select language "English"
+      And user select menu "Loyalty Program"
+      And user select sub menu "Loyalty"
+      And user search "Loyalty SQA"
+      And user click loyalty burger menu of "Loyalty SQA 1"
+      And stop
+      And user click list "Edit"
+      And stop
+

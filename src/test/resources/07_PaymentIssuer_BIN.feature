@@ -164,3 +164,17 @@ Feature: Payment Issuer - BIN
     And user click button "Add BIN"
     When user click button "Add BIN"
     Then stop
+
+# Edit BIN when more than 2 BIN on list
+  @web
+  Scenario: Edit BIN when more than 2 BIN on list
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "BIN"
+    And user search "BCA"
+    And stop
+    And user click BIN burger menu of "384950"
+    And stop
+    And user click list "Edit"
+    And stop

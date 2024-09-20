@@ -77,7 +77,7 @@ Feature: User Management - Subgroup
 
 #cancel add subgroup
   @web
-  Scenario: Add Subgroup
+  Scenario: Cancel Add Subgroup
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"

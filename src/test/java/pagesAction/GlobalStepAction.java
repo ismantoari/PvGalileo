@@ -105,8 +105,9 @@ public class GlobalStepAction {
     }
 
     public void userClickComboBoxCheckBoxAndSelectValue(String dropdownName, String targetValue)    {
-        Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
+
         Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
+                Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
         Action.enterKey(Global.comboBoxSelector(dropdownName));
         Action.escKey(Global.comboBoxSelector(dropdownName));
     }

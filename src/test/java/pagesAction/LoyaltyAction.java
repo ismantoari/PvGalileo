@@ -50,4 +50,8 @@ public class LoyaltyAction {
     public void userClickButtonMembership() {
         Action.click(LoyaltyAddMembership.buttonSaveChangesLoyaltyAddMembership);
     }
+
+    public void userClickBurgerMenuLoyaltyOf(String menuLoyalty) {
+        Action.click(Loyalty.burgerMenuLoyalty(menuLoyalty));
+    }
 }

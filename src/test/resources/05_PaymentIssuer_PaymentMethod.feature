@@ -1,5 +1,44 @@
 Feature: Payment Issuer - Payment Method
 
+
+# check payment method page
+  @web
+  Scenario: check payment method page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Payment Method"
+    Then user is on "payment method" page
+# check add payment method bank page
+  @web
+  Scenario: check add payment method bank page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Payment Method"
+    And user click buttonDrop "Add" and select value "Bank"
+    Then user is on "add payment method bank" page
+
+# check add payment method BNPL page
+  @web
+  Scenario: check add payment method BNPL page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Payment Method"
+    And user click buttonDrop "Add" and select value "BNPL Type"
+    Then user is on "add payment method bnpl" page
+
+# check add payment method QRIS page
+  @web
+  Scenario: check add payment method QRIS page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Payment Method"
+    And user click buttonDrop "Add" and select value "QRIS Type"
+    Then user is on "add payment method qris" page
+
 # add Payment Method Bank
   @web
   Scenario: Add Payment Method Bank
@@ -167,7 +206,7 @@ Feature: Payment Issuer - Payment Method
 
 # Edit Payment Method Bank
   @web
-  Scenario: Edit BNPL
+  Scenario: Edit Bank
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -185,7 +224,7 @@ Feature: Payment Issuer - Payment Method
 
 # Edit Payment Method QRIS
   @web
-  Scenario: Edit BNPL
+  Scenario: Edit QRIS
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -292,7 +331,7 @@ Feature: Payment Issuer - Payment Method
 
 # delete QRIS
   @web
-  Scenario: Delete Bank
+  Scenario: Delete QRIS
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -305,7 +344,7 @@ Feature: Payment Issuer - Payment Method
 
 # delete BNPL
   @web
-  Scenario: Delete Bank
+  Scenario: Delete BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -315,3 +354,17 @@ Feature: Payment Issuer - Payment Method
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete payment method success"
+
+# Edit Payment Method when more than 2 Payment method on list
+  @web
+  Scenario: Edit Payment Method when more than 2 Payment Method on list
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "Payment Method"
+    And user search "BCA"
+    And stop
+    And user click payment method burger menu of "BluBCA"
+    And stop
+    And user click list "Edit"
+    And stop

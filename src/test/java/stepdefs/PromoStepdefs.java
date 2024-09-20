@@ -149,5 +149,8 @@ public class PromoStepdefs {
         promoAddAction.userClickComboBoxPredefineAndSelectValue( comboBoxName,  value);
     }
 
-
+    @And("user click promo burger menu of {string}")
+    public void userClickBurgerMenuOf(String menuLoyalty) {
+        promoAddAction.userClickBurgerMenuPromoOf( menuLoyalty);
+    }
 }

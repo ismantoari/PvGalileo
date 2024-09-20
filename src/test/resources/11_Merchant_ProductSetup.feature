@@ -3,7 +3,7 @@ Feature: Merchant - Product Setup
   
 # check product page
   @web
-  Scenario: Add Product
+  Scenario: check Product page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Merchant"
@@ -12,7 +12,7 @@ Feature: Merchant - Product Setup
     
 # check add product page
   @web
-  Scenario: Add Product
+  Scenario: check add Product page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Merchant"

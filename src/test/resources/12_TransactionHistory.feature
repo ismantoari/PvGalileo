@@ -10,7 +10,7 @@ Feature: Transaction History
     
 #  search transaction detail
   @web
-  Scenario: Check Transaction Detail
+  Scenario: search Transaction Detail
     Given user already login as administrator
     And user select language "English"
     And user select menu "Transaction History"
@@ -21,7 +21,7 @@ Feature: Transaction History
 
 # filter transaction detail
   @web
-  Scenario: Check Transaction Detail
+  Scenario: filter Transaction Detail
     Given user already login as administrator
     And user select language "English"
     And user select menu "Transaction History"

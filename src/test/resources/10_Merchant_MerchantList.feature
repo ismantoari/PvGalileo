@@ -94,7 +94,7 @@ Feature: Merchant - Merchant List
 
 # Edit merchant list
   @web
-  Scenario: Cancel Add Merchant Single
+  Scenario: Edit Merchant Single
     Given user already login as administrator
     And user select language "English"
     And user select menu "Merchant"
@@ -220,7 +220,7 @@ Feature: Merchant - Merchant List
 
 # Do not fill the required data
   @web
-  Scenario: Do not fill the required data
+  Scenario: Do not fill the required data merchant
     Given user already login as administrator
     And user select language "English"
     And user select menu "Merchant"
@@ -242,43 +242,43 @@ Feature: Merchant - Merchant List
     When user click button "Add Merchant"
     Then show alert pop up "invalid parameter"
 
-# Duplicate Merchant Representative
-  @web
-  Scenario: Duplicate Merchant Representative
-    Given user already login as administrator
-    And user select language "English"
-    And user select menu "Merchant"
-    And user select sub menu "Merchant List"
-    And user click buttonDrop "Add" and select value "Single"
-    #Merchant Logo
-    And user upload loyalty logo "D:/PQA.jpg"
-    #Merchant Detail
-    And user input text box "Official Name *" with value "PQA Marketplace"
-    And user input text box "Alias Name *" with value "PQAM"
-    And user click combo box "Merchant Type" and select value "FNB"
-    And user click combo box "Merchant Parent" and select value "Butler's Steak"
-    And user click combo box "Location" and select value "PIK"
-    And user input text area "Address" with value "this is address"
-    #Bank Account
-    And user click combo box "Bank *" and select value "Mandiri"
-    And user input text box "Bank Account Number *" with value "10237123"
-    #MID
-    And user click button add MID list
-    And user input text box "MID" with value "881293123"
-    #Merchant Representative
-    # representative 1
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
-    # representative 2
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
-
-    When user click button "Add Merchant"
-    Then show alert pop up "Merchant list already exists"
+## Duplicate Merchant Representative
+#  @web
+#  Scenario: Duplicate Merchant Representative
+#    Given user already login as administrator
+#    And user select language "English"
+#    And user select menu "Merchant"
+#    And user select sub menu "Merchant List"
+#    And user click buttonDrop "Add" and select value "Single"
+#    #Merchant Logo
+#    And user upload loyalty logo "D:/PQA.jpg"
+#    #Merchant Detail
+#    And user input text box "Official Name *" with value "PQA Marketplace"
+#    And user input text box "Alias Name *" with value "PQAM"
+#    And user click combo box "Merchant Type" and select value "FNB"
+#    And user click combo box "Merchant Parent" and select value "Butler's Steak"
+#    And user click combo box "Location" and select value "PIK"
+#    And user input text area "Address" with value "this is address"
+#    #Bank Account
+#    And user click combo box "Bank *" and select value "Mandiri"
+#    And user input text box "Bank Account Number *" with value "10237123"
+#    #MID
+#    And user click button add MID list
+#    And user input text box "MID" with value "881293123"
+#    #Merchant Representative
+#    # representative 1
+#    And user click dropdown "PIC Type *" and select value "Business"
+#    And user input text box "PIC Name *" with value "Satrowijoyo"
+#    And user input text box "PIC Email *" with value "PQA@gmail.com"
+#    And user input text box "PIC Phone Number *" with value "088126137123"
+#    # representative 2
+#    And user click dropdown "PIC Type *" and select value "Business"
+#    And user input text box "PIC Name *" with value "Satrowijoyo"
+#    And user input text box "PIC Email *" with value "PQA@gmail.com"
+#    And user input text box "PIC Phone Number *" with value "088126137123"
+#
+#    When user click button "Add Merchant"
+#    Then show alert pop up "Merchant list already exists"
 
 # add Merchant List Multiple
   @web

@@ -150,7 +150,6 @@ Feature: Loyalty Program - Promo
     And user click dropdown "Promo Type *" and select value "Discount"
     And user click dropdown "Type *" and select value "Fix Amount"
 
-
     And user click add promo calculation "Loyalty Program Member"
     And user click combo box check box "Membership" and select value "bronze Member"
     And user input promo amount loyalty member level "1" with value "100"
@@ -355,3 +354,17 @@ Feature: Loyalty Program - Promo
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete Promo list success"
+
+
+# Edit Promo when more than 2 Promo on list
+  @web
+  Scenario: Edit Promo when more than 2 Promo on list
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Promo"
+    And user search "QA Promo"
+    And user click promo burger menu of "QA Promo"
+    And stop
+    And user click list "Edit"
+    And stop

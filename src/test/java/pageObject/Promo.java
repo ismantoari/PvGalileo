@@ -10,6 +10,8 @@ public class Promo {
         return By.xpath("//h6[text()='"+promoCategory+"']/following-sibling::button");
     }
 
-
+    public static By burgerMenuPromo (String PromoName){
+        return By.xpath("(//td[text()='"+PromoName+"']/following-sibling::td)[5]/child::button");
+    }
 
 }

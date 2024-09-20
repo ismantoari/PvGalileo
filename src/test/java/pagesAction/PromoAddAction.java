@@ -1,10 +1,8 @@
 package pagesAction;
 
 import helper.Action;
-import pageObject.Global;
+import pageObject.*;
 import pageObject.LoyaltyAdd;
-import pageObject.Promo;
-import pageObject.PromoAddEdit;
 
 public class PromoAddAction {
 
@@ -171,4 +169,7 @@ public class PromoAddAction {
     }
 
 
+    public void userClickBurgerMenuPromoOf(String menuPromo) {
+        Action.click(Promo.burgerMenuPromo(menuPromo));
+    }
 }

@@ -1,17 +1,27 @@
 Feature: Payment Issuer - Issuer
 
-# Check Bank page
+# Check issuer page
   @web
-  Scenario: Check Bank Page
+  Scenario: Check Issuer Page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
     When user select sub menu "Issuer"
     Then user is on "issuer" page
 
-    # Check Bank Add page
+    # Check issuer Add bank page
   @web
-  Scenario: Check Bank Page
+  Scenario: Check add Issuer Bank Page
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    When user select sub menu "Issuer"
+    And user click buttonDrop "Add" and select value "Bank"
+    Then user is on "add issuer" page
+
+# Check issuer Add bnpl page
+  @web
+  Scenario: Check add Issuer BNPL Page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -21,7 +31,7 @@ Feature: Payment Issuer - Issuer
 
 # add Bank
   @web
-  Scenario: Add Bank
+  Scenario: Add Issuer Bank
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -34,7 +44,7 @@ Feature: Payment Issuer - Issuer
 
 # add BNPL
   @web
-  Scenario: Add BNPL
+  Scenario: Add Issuer BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -47,7 +57,7 @@ Feature: Payment Issuer - Issuer
 
 # Edit Bank
   @web
-  Scenario: Edit Bank
+  Scenario: Edit Issuer Bank
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -62,7 +72,7 @@ Feature: Payment Issuer - Issuer
 
 # Edit BNPL
   @web
-  Scenario: Edit BNPL
+  Scenario: Edit Issuer BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -77,7 +87,7 @@ Feature: Payment Issuer - Issuer
 
 # cancel add Bank
   @web
-  Scenario: Cancel Add Bank
+  Scenario: Cancel Add Issuer Bank
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -90,7 +100,7 @@ Feature: Payment Issuer - Issuer
 
 # cancel add BNPL
   @web
-  Scenario: Cancel Add BNPL
+  Scenario: Cancel Add Issuer BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -103,7 +113,7 @@ Feature: Payment Issuer - Issuer
 
 # negative case add existing data
   @web
-  Scenario: Add existing data
+  Scenario: Add existing data issuer
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -116,7 +126,7 @@ Feature: Payment Issuer - Issuer
 
 # negative case not fill the required data
   @web
-  Scenario: Do not fill the required data
+  Scenario: Do not fill the required data issuer
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -128,7 +138,7 @@ Feature: Payment Issuer - Issuer
     
 # Delete Bank
   @web
-  Scenario: Delete Bank
+  Scenario: Delete issuer Bank
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -141,7 +151,7 @@ Feature: Payment Issuer - Issuer
 
 # Delete Bank
   @web
-  Scenario: Delete BNPL
+  Scenario: Delete issuer BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
@@ -151,3 +161,17 @@ Feature: Payment Issuer - Issuer
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete issuer list success"
+
+# Edit Payment issuer when more than 2 Payment issuer on list
+  @web
+  Scenario: Edit Payment issuer when more than 2 Payment issuer on list
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "Issuer"
+    And user search "BCA"
+    And stop
+    And user click payment issuer burger menu of "BluBCA"
+    And stop
+    And user click list "Edit"
+    And stop

@@ -2,7 +2,7 @@ Feature: Location
 
 # check location page
   @web
-  Scenario: Edit Location
+  Scenario: check location page
     Given user already login as administrator
     And user select language "English"
     When user select menu "Location"
@@ -10,7 +10,7 @@ Feature: Location
     
 # check add location page
   @web
-  Scenario: Edit Location
+  Scenario: check add location page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
@@ -150,7 +150,7 @@ Feature: Location
 
 # do not fill the required data
   @web
-  Scenario: Do not Fill the Required Data
+  Scenario: Do not Fill the Required Data Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
@@ -198,7 +198,7 @@ Feature: Location
 
 # delete location 1
   @web
-  Scenario: Edit Location
+  Scenario: Delete Location 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
@@ -210,7 +210,7 @@ Feature: Location
 
 # delete location 2
   @web
-  Scenario: Edit Location
+  Scenario: Delete Location 2
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"

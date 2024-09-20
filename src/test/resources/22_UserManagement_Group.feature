@@ -2,7 +2,7 @@ Feature: User Management - Group
 
 # Check user management - group page
   @web
-  Scenario: Check add User Page
+  Scenario: Check Group Page
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"
@@ -11,7 +11,7 @@ Feature: User Management - Group
 
 # Check user management - add group page
   @web
-  Scenario: Check add User Page
+  Scenario: Check add Group Page
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"
