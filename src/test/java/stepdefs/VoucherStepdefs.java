@@ -63,4 +63,9 @@ public class VoucherStepdefs {
     public void userClickDropdownAppliedPaymentMethodRowWithValueOf(String paymentName, String row, String value, String presentMarking) {
         voucherAction.userClickDropdownAppliedPaymentMethodRowWithValueOf( paymentName,  row,  value,  presentMarking);
     }
+
+    @And("user click check checkbox {string} of {string}")
+    public void userClickAllCheckCheckboxOf(String checkboxName, String presentMarking) {
+        voucherAction.userClickAllCheckCheckboxOf(checkboxName, presentMarking);
+    }
 }

@@ -1,6 +1,7 @@
 package pagesAction;
 
 import helper.Action;
+import io.cucumber.java.en_old.Ac;
 import org.junit.Assert;
 import pageObject.*;
 import pageObject.LoyaltyAdd;
@@ -53,5 +54,13 @@ public class LoyaltyAction {
 
     public void userClickBurgerMenuLoyaltyOf(String menuLoyalty) {
         Action.click(Loyalty.burgerMenuLoyalty(menuLoyalty));
+    }
+
+    public void userClickButtonAtAddMembership(String buttonName) {
+        Action.click(LoyaltyAddMembership.cancelAddMembership);
+    }
+
+    public void verifyDeletedLoyaltyName(String loyaltyName) {
+        Action.verifyNotEqualsText(null, loyaltyName);
     }
 }

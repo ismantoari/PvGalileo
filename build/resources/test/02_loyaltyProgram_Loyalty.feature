@@ -181,6 +181,7 @@ Feature: Loyalty Program - Loyalty
     And user click burger menu
     And user click list "Edit"
     #Add Bank
+#    And user click check checkbox "All Payment Method Including Cash"
     And user click check checkbox "All Bank"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
@@ -230,7 +231,7 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    And user edit Membership Level Name "silver Member"
+    And user edit Membership Level Name "Silver Member"
     And user click list "Edit"
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user click button save changes membership
@@ -248,7 +249,8 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    And user edit Membership Level Name "gold Member"
+    And user edit Membership Level Name "Gold Badge Member"
+    And user click list "Edit"
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user click button save changes membership
     When user click button "Save Changes"
@@ -265,28 +267,30 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    And user edit Membership Level Name "platinum Member"
+    And user edit Membership Level Name "Platinum Badge Membership"
+    And user click list "Edit"
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user click button save changes membership
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
 
-#Normal case Edit Loyalty Program From All Payment Method to QRIS Monei only
+#Normal case Edit Loyalty Program From All Payment Method to Bank BNI only
+
   @web
   Scenario: Edit Loyalty Program From All Payment Method to QRIS Monei only
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"
     And user select sub menu "Loyalty"
-    And user search "Loyalty SQA"
+    And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
     And user click check checkbox "All Payment Method Including Cash"
-    And user click check checkbox "All QRIS"
-    And user click button "Add" of payment method "QRIS"
-    And user click dropdown applied payment method "QRIS" row "1" with value "Monei"
-    And user click applied payment method sub checkbox "Monei"
+    And user click check checkbox "All Bank"
+    And user click button "Add" of payment method "Bank"
+    And user click dropdown applied payment method "Bank" row "1" with value "BRI"
+    And user click applied payment method sub checkbox "BRI Debit"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
@@ -353,15 +357,17 @@ Feature: Loyalty Program - Loyalty
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user select Partial Redeem "Yes"
     And user input text box predefine "Max Redeem *" with value "100"
-    And user click button "Cancel"
-    And stop
-    And stop
+    And user click button "Cancel" at add membership
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
 # cancel add loyalty program
   @web
   Scenario: Cancel Add Loyalty Program
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Loyalty"
     And user click button "Add Loyalty"
     And user upload loyalty logo "D:\PQA.jpg"
     And user input text box "Loyalty Name *" with value "Loyalty SQA 1"
@@ -394,9 +400,22 @@ Feature: Loyalty Program - Loyalty
     And user click button "Add Membership"
     And user click check checkbox "All Merchant"
     And user click check checkbox "All Payment Method Including Cash"
-    When user click button "cancel"
+    When user click button "Cancel"
     Then user is on "loyalty" page
 
+# Edit loyalty when more than 2 loyalty on list
+    @web
+    Scenario: Edit loyalty when more than 2 loyalty on list
+      Given user already login as administrator
+      And user select language "English"
+      And user select menu "Loyalty Program"
+      And user select sub menu "Loyalty"
+      And user search "Loyalty SQA"
+      And user click loyalty burger menu of "Loyalty SQA 1"
+      And user click list "Edit"
+      And user click check checkbox "All Payment Method Including Cash"
+      When user click button "Save Changes"
+      Then show alert pop up "Update Loyalty program success"
 
 #normal case delete loyalty
   @web
@@ -410,17 +429,16 @@ Feature: Loyalty Program - Loyalty
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete Loyalty program success"
+    Then verify deleted loyalty name "Loyalty SQA 1"
 
-# Edit loyalty when more than 2 loyalty on list
-    @web
-    Scenario: Edit loyalty when more than 2 loyalty on list
-      Given user already login as administrator
-      And user select language "English"
-      And user select menu "Loyalty Program"
-      And user select sub menu "Loyalty"
-      And user search "Loyalty SQA"
-      And user click loyalty burger menu of "Loyalty SQA 1"
-      And stop
-      And user click list "Edit"
-      And stop
-
+# check mandatory loyalty
+  @web
+  Scenario: check mandatory loyalty
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Loyalty"
+    And user click button "Add Loyalty"
+    And stop
+    When user click button "Add Loyalty"
+    Then show error mandatory of "Loyalty Name *" with message "Loyalty Name is a required field"

@@ -152,7 +152,7 @@ Feature: Payment Issuer - BIN
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "22"
     When user click button "Add BIN"
-    Then show alert pop up "Invalid parameter"
+    Then show error mandatory of "BIN Label *" with message "BIN Label is a required field"
 
 # negative case all empty
   @web

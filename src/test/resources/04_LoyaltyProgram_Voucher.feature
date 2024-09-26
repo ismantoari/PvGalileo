@@ -48,7 +48,7 @@ Feature: Loyalty Program - Voucher
     And user click dropdown "Period Type" and select value "Daily"
     And user input text box "Maximum Count" with value "100"
     And user input text box "Maximum Count Per User" with value "1"
-#    And user click combo box check box "Membership" and select value "silver Member"
+    And user click combo box check box "Membership" and select value "silver Member"
     #Voucher Expiry
     And user click radio button of "Voucher Expiry" with value "In Date"
     And user input text box predefine "Expiry Date" with value "14-09-2024"
@@ -59,7 +59,7 @@ Feature: Loyalty Program - Voucher
     #Occasion
     And user click radio button of "Occasion" with value "New Member"
     #Voucher Place
-#    And user click combo box check box "Merchant" and select value "Butler's Steak"
+    And user click combo box check box "Merchant" and select value "Butler's Steak"
 #    Voucher Time - get voucher
     And user click button "Add" of "Get Voucher"
     And user click dropdown day row "1" and select value "Wednesday" of "Get Voucher"
@@ -148,11 +148,12 @@ Feature: Loyalty Program - Voucher
     #Occasion
     And user click radio button of "Occasion" with value "New Member"
     #Voucher Place
-#    And user click combo box check box "Merchant" and select value "Butler's Steak"
+    And user click combo box check box "Merchant" and select value "Butler's Steak"
+
     #Voucher Time - get voucher
-#    And user click button "Add All Day" of "Get Voucher"
+    And user click button "Add All Day" of "Get Voucher"
     #Voucher Time - Redeem Voucher
-#    And user click button "Add All Day" of "Redeem Voucher"
+    And user click button "Add All Day" of "Redeem Voucher"
 
     #Voucher Payment Method - get voucher
     And user click check checkbox of "Get Voucher"
@@ -212,13 +213,13 @@ Feature: Loyalty Program - Voucher
     And user click button "Add All Day" of "Redeem Voucher"
 
     #Voucher Payment Method - get voucher
-#    And user click check checkbox "All QRIS" of "Get Voucher"
-#    And user click check checkbox "All BNPL" of "Get Voucher"
-#    And user click check checkbox "All Bank" of "Get Voucher"
+    And user click check checkbox "All QRIS" of "Get Voucher"
+    And user click check checkbox "All BNPL" of "Get Voucher"
+    And user click check checkbox "All Bank" of "Get Voucher"
 #    #Voucher Payment Method - get voucher
-#    And user click check checkbox "All QRIS" of "Redeem Voucher"
-#    And user click check checkbox "All BNPL" of "Redeem Voucher"
-#    And user click check checkbox "All Bank" of "Redeem Voucher"
+    And user click check checkbox "All QRIS" of "Redeem Voucher"
+    And user click check checkbox "All BNPL" of "Redeem Voucher"
+    And user click check checkbox "All Bank" of "Redeem Voucher"
 #
 #    When user click button "Cancel"
 #    Then user is on "voucher" page
@@ -290,9 +291,10 @@ Feature: Loyalty Program - Voucher
     And user select menu "Loyalty Program"
     And user select sub menu "Voucher"
     And user click button "Add Voucher"
+    And stop
     When user click button "Add Voucher"
-    Then stop
-
+    And stop
+    Then show error mandatory of "Voucher Name *" with message "Voucher Name is a required field"
 # Edit Voucher
   @web
   Scenario: Edit Voucher
@@ -348,3 +350,4 @@ Feature: Loyalty Program - Voucher
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete voucher list success"
+    Then verify deleted loyalty name "Promo Loyalty PQA 2"

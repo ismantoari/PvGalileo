@@ -2,6 +2,7 @@ Feature: Report - Loyalty Program - Detail
 
 
 #  check loyalty program summary page
+  @web
   Scenario: Check Loyalty Program Detail Page
     Given user already login as administrator
     And user select language "English"
@@ -12,7 +13,7 @@ Feature: Report - Loyalty Program - Detail
 
 #Download Specific Date
   @web
-  Scenario: Detail LP Detail SD
+  Scenario: Detail LP Detail SD 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
@@ -26,7 +27,7 @@ Feature: Report - Loyalty Program - Detail
 
 #Download Weekly
   @web
-  Scenario: Detail LP Detail Weekly
+  Scenario: Detail LP Detail Weekly 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
@@ -40,7 +41,7 @@ Feature: Report - Loyalty Program - Detail
 
 #Download Monthly
   @web
-  Scenario: Detail LP Detail Monthly
+  Scenario: Detail LP Detail Monthly 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"

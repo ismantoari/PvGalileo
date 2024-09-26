@@ -147,7 +147,9 @@ public class PromoAddEdit {
         return By.xpath("//*[text()='"+value+"']//ancestor::span/preceding-sibling::span");
     }
 
-
+    public static By promoCalculationErrorMsg(String errorMsg) {
+        return By.xpath("//h6[text()='Promo Calculation']/parent::div/following-sibling::span[text()='"+errorMsg+"']");
+    }
 }
 
 

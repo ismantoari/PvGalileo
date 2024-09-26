@@ -1,6 +1,7 @@
 Feature: Report - Merchant - Detail
 
 #  check merchant detail page
+  @web
   Scenario: Check Merchant Detail Page
     Given user already login as administrator
     And user select language "English"
@@ -25,7 +26,7 @@ Feature: Report - Merchant - Detail
 
 #Download Weekly
   @web
-  Scenario: Detail LP Detail Weekly
+  Scenario: Detail LP Detail Weekly Merchant
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
@@ -39,7 +40,7 @@ Feature: Report - Merchant - Detail
 
 #Download Monthly
   @web
-  Scenario: Detail LP Detail Monthly
+  Scenario: Detail LP Detail Monthly Merchant
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"

@@ -1,8 +1,11 @@
 package pagesAction;
 
+import org.junit.Assert;
 import pageObject.*;
 import helper.Action;
 import helper.Endpoint;
+
+import static helper.BaseTest.driver;
 
 public class GlobalStepAction {
 
@@ -105,9 +108,10 @@ public class GlobalStepAction {
     }
 
     public void userClickComboBoxCheckBoxAndSelectValue(String dropdownName, String targetValue)    {
-
         Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
-                Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
+        Action.inputText(Global.comboBoxSelector(dropdownName),targetValue);
+        Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
+        Action.arrowDownKey(Global.comboBoxSelector(dropdownName));
         Action.enterKey(Global.comboBoxSelector(dropdownName));
         Action.escKey(Global.comboBoxSelector(dropdownName));
     }
@@ -139,6 +143,16 @@ public class GlobalStepAction {
     }
 
 
+    public void showErrorMandatoryMessage(String TextboxName,String MandatoryText) throws InterruptedException {
+
+        Action.verifyMessageMandatory(TextboxName, MandatoryText);
+    }
+
+
+    public void showErrorPictureWithMessage(String errorMessage) {
+
+        Action.showErrorPictureMessage(errorMessage);
+    }
 }
 
 

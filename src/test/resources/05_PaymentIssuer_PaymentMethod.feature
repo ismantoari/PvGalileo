@@ -314,7 +314,7 @@ Feature: Payment Issuer - Payment Method
     And user input text area "Description" with value "description in here"
     #Payment Method PIC
     When user click button "Add Payment Method"
-    Then show alert pop up "invalid parameter"
+    Then show error mandatory of "Payment Method Name *" with message "Payment Method is a required field"
 
 # delete Bank
   @web
@@ -367,4 +367,10 @@ Feature: Payment Issuer - Payment Method
     And user click payment method burger menu of "BluBCA"
     And stop
     And user click list "Edit"
-    And stop
+    And user click combo box "Bank Name *" and select value "Mandiri"
+    And user input text box "Payment Method Name *" with value "PQA Bank"
+    And user click dropdown "Payment Method Type" and select value "Card"
+    And user input text area "Description" with value "description Bank"
+
+    When user click button "Save Changes"
+    Then show alert pop up "Update payment method success"

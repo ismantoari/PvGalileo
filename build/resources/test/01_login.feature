@@ -38,6 +38,3 @@ Feature: Login
     Then show alert blank username "User Name is a required field"
     Then show alert blank password "Password is a required field"
     Then user is still on the login page
-
-
-    #And stop

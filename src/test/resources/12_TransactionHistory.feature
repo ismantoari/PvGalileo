@@ -28,5 +28,5 @@ Feature: Transaction History
     And user input text box predefine "Transaction Date" with value "03-09-2024"
     And user click combo box "Merchant" and select value "All"
     And user click button "Search"
-    When user click dropdown "transactionType" and select value "Sale Galileo"
+    When user click dropdown "TransactionType" and select value "Sale Galileo"
     Then stop

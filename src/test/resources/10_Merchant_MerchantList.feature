@@ -240,7 +240,7 @@ Feature: Merchant - Merchant List
     And user input text box "MID" with value "881293123"
     #Merchant Representative
     When user click button "Add Merchant"
-    Then show alert pop up "invalid parameter"
+    Then show error mandatory of "Alias Name *" with message "Alias Name is a required field"
 
 ## Duplicate Merchant Representative
 #  @web

@@ -65,4 +65,8 @@ public class VoucherAction {
             Action.click(Global.dropdownList(value));
         }
     }
+
+    public void userClickAllCheckCheckboxOf(String checkboxName, String presentMarking) {
+        Action.click(VoucherAddEdit.voucherPaymentMethodCheck(presentMarking,checkboxName));
+    }
 }

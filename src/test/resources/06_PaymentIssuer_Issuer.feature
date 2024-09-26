@@ -134,7 +134,7 @@ Feature: Payment Issuer - Issuer
     And user click buttonDrop "Add" and select value "Bank"
     And user input text area "Description" with value "This is Jago Bank"
     When user click button "Add Bank"
-    Then show alert pop up "invalid parameter"
+    Then show error mandatory of "Bank Name *" with message "Bank is a required field"
     
 # Delete Bank
   @web
@@ -174,4 +174,7 @@ Feature: Payment Issuer - Issuer
     And user click payment issuer burger menu of "BluBCA"
     And stop
     And user click list "Edit"
-    And stop
+    And user input text box predefine "Bank Name *" with value "Superbank"
+    And user input text area predefine "Description" with value "This is Superbank Bank"
+    And user click button "Save Changes"
+    Then show alert pop up "Update issuer list success"

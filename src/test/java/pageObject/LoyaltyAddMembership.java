@@ -3,6 +3,8 @@ package pageObject;
 import org.openqa.selenium.By;
 
 public class LoyaltyAddMembership {
+    public static By cancelAddMembership = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-15210vm']");
+
     public static By radioButtonPartialRedeem (String opt){
         return By.xpath("(//*[text()='Partial Redeem *']//following-sibling::div/descendant::label//*[text()='"+opt+"'])/preceding-sibling::*");
     }

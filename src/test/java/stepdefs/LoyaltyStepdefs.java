@@ -118,4 +118,15 @@ public class LoyaltyStepdefs {
     public void userClickBurgerMenuOf(String menuLoyalty) {
         loyaltyAction.userClickBurgerMenuLoyaltyOf( menuLoyalty);
     }
+
+    @And("user click button {string} at add membership")
+    public void userClickButtonAtAddMembership(String buttonName) {
+        loyaltyAction.userClickButtonAtAddMembership(buttonName);
+    }
+
+    @Then("verify deleted loyalty name {string}")
+    public void verifyDeletedLoyaltyName(String loyaltyName) {
+        loyaltyAction.verifyDeletedLoyaltyName( loyaltyName);
+
+    }
 }

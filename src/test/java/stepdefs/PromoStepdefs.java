@@ -1,6 +1,7 @@
 package stepdefs;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import pagesAction.PromoAddAction;
 
 public class PromoStepdefs {
@@ -152,5 +153,10 @@ public class PromoStepdefs {
     @And("user click promo burger menu of {string}")
     public void userClickBurgerMenuOf(String menuLoyalty) {
         promoAddAction.userClickBurgerMenuPromoOf( menuLoyalty);
+    }
+
+    @Then("show error promo calculation with message {string}")
+    public void showErrorMandatoryOfPromoCalculationWithMessage(String errorMessage) {
+        promoAddAction.showErrorMandatoryOfPromoCalculationWithMessage( errorMessage);
     }
 }

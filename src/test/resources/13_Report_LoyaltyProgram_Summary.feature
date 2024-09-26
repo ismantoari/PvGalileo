@@ -1,12 +1,13 @@
 Feature: Report - Loyalty Program - Summary
 
 #  check loyalty program summary page
+  @web
   Scenario: Check Loyalty Program Summary Page
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
     And user click sub menu report "Loyalty Program"
-    When user select sub menu "Summary"
+    And user select sub menu "Summary"
     Then user is on "loyalty program summary" page
 
 #Download Specific Date
@@ -28,6 +29,7 @@ Feature: Report - Loyalty Program - Summary
   Scenario: Detail LP Summary Weekly
     Given user already login as administrator
     And user select language "English"
+    And user select menu "Report"
     And user click sub menu report "Loyalty Program"
     And user select sub menu "Summary"
     And user click combo box "Loyalty Program" and select value "Urban Forest loyalty"

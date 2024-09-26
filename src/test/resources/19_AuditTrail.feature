@@ -18,7 +18,6 @@ Feature: Audit Trail
     And user click combo box "User Name" and select value "administrator"
     When user click button "Search"
     Then stop
-    Then stop
 
 #download audit trail
   @web

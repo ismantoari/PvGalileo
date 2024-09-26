@@ -65,12 +65,17 @@ public class Global {
        return By.xpath("//*[text()='"+ menuName +"'])/parent::div/following-sibling::div//child::div[text()='"+subMenuName+"']");
     }
 
-
-
     public static By Submenu (String Menu, String Submenu){
         return By.xpath("(//*[@role='button']//[text()='"+Menu+"']//parent::div/following-sibling::div/descendant::div[text()='"+Submenu+"'])//parent::span/preceding-sibling::span");
     }
 
+    public static By mandatoryText (String textboxName){
+        return By.xpath("//label[text()='"+ textboxName +"']/following-sibling::div/following-sibling::p");
+    }
+
+    public static By photoExtensionValidate() {
+        return By.xpath("//p[text()='File type must be image/jpeg,image/png,image/jpg']");
+    }
 }
 
 

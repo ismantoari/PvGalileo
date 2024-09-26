@@ -61,7 +61,7 @@ Feature: Loyalty Program - Promo
     And user click dropdown promo applied payment method "Wallet" row "1" with value "Allo"
     And user click promo applied payment method sub checkbox "Allo Cash"
     When user click button "Add Promo"
-    Then show alert pop up "Insert promo list success"
+    Then show alert pop up "Insert promo success"
 
 # normal case 2 promo calculation
   @web
@@ -93,14 +93,14 @@ Feature: Loyalty Program - Promo
     And user click add promo calculation "Loyalty Program Member"
     And user input percentage loyalty member level "2" with value "20"
     And user input max amount loyalty member level "2" with value "100"
-    And user input minimum transaction loyalty member level "2" with value "2000"
-    And user input maximum transaction loyalty member level "2" with value "10000"
+    And user input minimum transaction loyalty member level "2" with value "10001"
+    And user input maximum transaction loyalty member level "2" with value "20000"
     #LEVEL 3
     And user click add promo calculation "Loyalty Program Member"
     And user input percentage loyalty member level "3" with value "20"
     And user input max amount loyalty member level "3" with value "100"
-    And user input minimum transaction loyalty member level "3" with value "2000"
-    And user input maximum transaction loyalty member level "3" with value "10000"
+    And user input minimum transaction loyalty member level "3" with value "20001"
+    And user input maximum transaction loyalty member level "3" with value "30000"
 
     #Promo Calculation - Galileo Member
     And user click add promo calculation "Galileo Member"
@@ -127,8 +127,8 @@ Feature: Loyalty Program - Promo
     And user click check checkbox "All Wallet"
     And user click check checkbox "All BNPL"
     And user click check checkbox "All Bank"
-#    When user click button "Add Promo"
-#    Then show alert pop up "Insert Promo list success"
+    When user click button "Add Promo"
+    Then show alert pop up "Insert promo success"
 
 # normal case all promo calculation
   @web
@@ -201,8 +201,8 @@ Feature: Loyalty Program - Promo
     And user click dropdown applied payment method "Bank" row "1" with value "BCA"
     And user click applied payment method sub checkbox "BCA Debit"
 
-#    When user click button "Add Promo"
-#    Then show alert pop up "Insert Promo list success"
+    When user click button "Add Promo"
+    Then show alert pop up "Insert promo success"
 
 # negative case no calculation promo
   @web
@@ -233,7 +233,7 @@ Feature: Loyalty Program - Promo
     And user click add all promo time day button
     #Promo Payment Method
     When user click button "Add Promo"
-    Then show alert pop up "Invalid parameter"
+    Then show error promo calculation with message "Please add at least one calculation"
 
 # add existing promo name
   @web
@@ -295,7 +295,6 @@ Feature: Loyalty Program - Promo
     #Promo Time
 #    And user click button add of promo time
     And user click add all promo time day button
-
     #Promo Payment Method
     And user click button "Add" of payment method "Wallet"
     And user click dropdown applied payment method "Wallet" row "1" with value "Allo"
@@ -339,8 +338,8 @@ Feature: Loyalty Program - Promo
   And user click combo box check box "Merchant" and select value "Toma's Brasserie"
   # Promo Payment Method
   And user click check checkbox "All Payment Method Including Cash"
-#  When user click button "Save Changes"
-#  Then show alert pop up "Update Promo list success"
+  When user click button "Save Changes"
+  Then show alert pop up "Update promo success"
 
 # delete promo
   @web
@@ -353,7 +352,8 @@ Feature: Loyalty Program - Promo
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete Promo list success"
+    Then show alert pop up "Delete promo success"
+    Then verify deleted loyalty name "QA Promo 3"
 
 
 # Edit Promo when more than 2 Promo on list
@@ -365,6 +365,23 @@ Feature: Loyalty Program - Promo
     And user select sub menu "Promo"
     And user search "QA Promo"
     And user click promo burger menu of "QA Promo"
-    And stop
+
     And user click list "Edit"
+
+#    And user click on switch "Publish Promo"
+  # Promo Place
+#    And user click combo box check box "Merchant" and select value "Toma's Brasserie"
+  When user click button "Save Changes"
+  Then show alert pop up "Update promo success"
+
+    # check mandatory promo
+  @web
+  Scenario: check mandatory Promo
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Promo"
+    And user click button "Add Promo"
     And stop
+    When user click button "Add Promo"
+    Then show error mandatory of "Promo Name *" with message "Promo Name is a required field"

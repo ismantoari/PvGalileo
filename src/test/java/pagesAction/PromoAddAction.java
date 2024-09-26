@@ -172,4 +172,8 @@ public class PromoAddAction {
     public void userClickBurgerMenuPromoOf(String menuPromo) {
         Action.click(Promo.burgerMenuPromo(menuPromo));
     }
+
+    public void showErrorMandatoryOfPromoCalculationWithMessage(String errorMessage) {
+        Action.verifyEqualsText(errorMessage,"Please add at least one calculation");
+    }
 }

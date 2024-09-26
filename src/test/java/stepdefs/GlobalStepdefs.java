@@ -1,6 +1,7 @@
 package stepdefs;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import pagesAction.GlobalStepAction;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -126,5 +127,15 @@ public class GlobalStepdefs {
     }
 
 
+    @Then("show error mandatory of {string} with message {string}")
+    public void showErrorMandatoryMessage(String textboxName, String MandatoryText) throws InterruptedException {
+        globalStepAction.showErrorMandatoryMessage(textboxName, MandatoryText);
+    }
 
+
+
+    @Then("show error picture with message {string}")
+    public void showErrorPictureWithMessage(String errorMessage) {
+        globalStepAction.showErrorPictureWithMessage(errorMessage);
+    }
 }

@@ -161,13 +161,11 @@ Feature: Location
     #Loyalty Program Booking Facilities
     And user click button "Add"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
     And user input text box "Total Slot" with value "10"
     #Landlord Representative
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Location"
-    Then show alert pop up "Invalid Parameter"
+    Then show error mandatory of "Location Name *" with message "Location Name is a required field"
 
 # Upload Booking Facilities with invalid format
   @web
@@ -179,22 +177,14 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click dropdown "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "BRI"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
-    #Loyalty Program Booking Facilities
+    
+      #Loyalty Program Booking Facilities
     And user click button "Add"
-    And user upload loyalty logo "D:/PQA.npg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
-    And user input text box "Total Slot" with value "10"
-    #Landlord Representative
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
-    When user click button "Add Location"
-    Then show alert pop up "invalid parameter"
+    When user upload loyalty logo "D:/sample.txt"
+    Then show error picture with message "- File type must be image/jpeg,image/png,image/jpg"
 
 # delete location 1
   @web
@@ -202,11 +192,11 @@ Feature: Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
-    And user search "Maju Jaya Sendiri"
+    And user search "Madu Jaya Mandiri"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete location success"
+    Then show alert pop up "Delete Landlord success"
 
 # delete location 2
   @web
@@ -218,4 +208,4 @@ Feature: Location
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete location success"
+    Then show alert pop up "Delete Landlord success"

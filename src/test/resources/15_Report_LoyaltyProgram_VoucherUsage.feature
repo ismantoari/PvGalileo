@@ -1,6 +1,7 @@
 Feature: Report - Loyalty Program - Voucher Usage
 
 #  check loyalty program Voucher Usage page
+  @web
   Scenario: Check Loyalty Program Voucher Usage Page
     Given user already login as administrator
     And user select language "English"

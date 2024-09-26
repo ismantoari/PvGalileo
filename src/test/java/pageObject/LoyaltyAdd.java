@@ -27,4 +27,7 @@ public class LoyaltyAdd {
         return By.xpath("//*[text()='"+value+"']//ancestor::span/preceding-sibling::span");
     }
 
+    public static By checkMandatoryRequirement(String required) {
+        return By.xpath("//p[text()='"+required+"']");
+    }
 }

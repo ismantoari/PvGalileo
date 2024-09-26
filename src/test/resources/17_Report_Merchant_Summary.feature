@@ -1,6 +1,7 @@
 Feature: Report - Merchant - Summary
 
 #  check merchant summary page
+  @web
   Scenario: Check Merchant Summary Page
     Given user already login as administrator
     And user select language "English"
@@ -25,7 +26,7 @@ Feature: Report - Merchant - Summary
 
 #Download Weekly
   @web
-  Scenario: Detail LP Summary Weekly
+  Scenario: Detail LP Summary Weekly 2
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"
@@ -39,7 +40,7 @@ Feature: Report - Merchant - Summary
 
 #Download Monthly
   @web
-  Scenario: Detail LP Summary Monthly
+  Scenario: Detail LP Summary Monthly 2
     Given user already login as administrator
     And user select language "English"
     And user select menu "Report"

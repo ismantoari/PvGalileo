@@ -44,4 +44,8 @@ public class VoucherAddEdit {
         }
         return By.xpath("(//p[text()='"+presentMarking+"']/parent::div/following-sibling::div/child::div/following-sibling::div//child::div/following-sibling::div//child::p[text()='"+ startOrEnd +"']/parent::label/following-sibling::div)['"+row+"']/child::div["+tag+"]");
     }
+
+    public static By voucherPaymentMethodCheck(String presentMarking, String checkName) {
+        return By.xpath("//p[text()='"+presentMarking+"']/parent::div/following-sibling::div/child::div/child::div/child::p/following-sibling::div/child::label/child::h6[text()='"+checkName+"']/preceding-sibling::span");
+    }
 }

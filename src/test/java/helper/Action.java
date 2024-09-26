@@ -107,6 +107,12 @@ public class Action {
         Assert.assertEquals(expectedAlert, actualAlert);
     }
 
+    public static void verifyMessageMandatory ( String textboxName,String actualMessage){
+        String expectedMessage = driver.findElement(Global.mandatoryText(textboxName)).getText();
+        Assert.assertEquals(expectedMessage, actualMessage);
+
+
+    }
     public static void verifyURL(String pageURL) {
         String actualUrl = driver.getCurrentUrl();
 
@@ -315,5 +321,10 @@ public class Action {
 
     public static void openWeb(){
         driver.get(hostGalileo);
+    }
+
+    public static void showErrorPictureMessage(String errorMessage) {
+        String expectedMessage = driver.findElement(Global.photoExtensionValidate()).getText();
+        Assert.assertEquals(expectedMessage, errorMessage);
     }
 }
