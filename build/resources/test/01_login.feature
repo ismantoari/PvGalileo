@@ -8,9 +8,7 @@ Feature: Login
     When user click login button
     Then show alert pop up "Login success"
     Then user is on "dashboard" page
-
-
-
+    
   @web
   Scenario: Login with invalid username
     Given user is on login page

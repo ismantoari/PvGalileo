@@ -8,7 +8,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     When user select sub menu "BIN"
     Then user is on "BIN" page
-    Then stop
+    Then user is on "BIN" page
 
 #  check add BIN page
   @web
@@ -19,7 +19,6 @@ Feature: Payment Issuer - BIN
     And user select sub menu "BIN"
     When user click button "Add BIN"
     Then user is on "add BIN" page
-    Then stop
 
 # positive case card type other - delete
   @web
@@ -30,11 +29,11 @@ Feature: Payment Issuer - BIN
     And user select sub menu "BIN"
     And user click button "Add BIN"
     And user click combo box "Issuer Name *" and select value "Mandiri"
-    And user click dropdown "Card Type *" and select value "Other"
+    And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "Mandiri Visa Platinum"
     And user input text box "BIN *" with value "556887"
     When user click button "Add BIN"
-    Then show alert pop up "Insert BIN Success"
+    Then show alert pop up "Insert BIN success"
     Then verify created new loyalty name "Mandiri Visa Platinum"
 
 # positive case card type credit - edit
@@ -63,14 +62,14 @@ Feature: Payment Issuer - BIN
     And user search "558611"
     And user click burger menu
     And user click list "Edit"
-    And user click combo box check box "Issuer Name *" and select value "BRI"
+    And stop
+    And user click combo box "Issuer Name *" and select value "BRI"
+    And stop
     And user click dropdown "Card Type *" and select value "Other"
     And user input text box predefine "BIN Label *" with value "BRI Mastercard Platinum"
     And user input text box predefine "BIN *" with value "334011"
     When user click button "Save Changes"
     Then show alert pop up "Update BIN Success"
-    #for now use this, afterward will be change with more proper gherkin
-    Then verify created new loyalty name "BRI Mastercard Platinum"
 
 
 # Cancel add BIN
@@ -107,7 +106,6 @@ Feature: Payment Issuer - BIN
     And user select sub menu "BIN"
     When user click dropdown "Issuer Name" and select value "Mandiri"
     Then stop
-    Then stop
 
 #Delete BIN
   @web
@@ -120,7 +118,7 @@ Feature: Payment Issuer - BIN
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete BIN Success"
+    Then show alert pop up "Delete BIN success"
 
 
 # Negative case card type other already exists
@@ -152,7 +150,7 @@ Feature: Payment Issuer - BIN
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "22"
     When user click button "Add BIN"
-    Then show error mandatory of "BIN Label *" with message "BIN Label is a required field"
+    Then show alert pop up "Invalid parameter"
 
 # negative case all empty
   @web
@@ -163,7 +161,7 @@ Feature: Payment Issuer - BIN
     And user select sub menu "BIN"
     And user click button "Add BIN"
     When user click button "Add BIN"
-    Then stop
+    Then show error mandatory of "BIN Label *" with message "BIN Label is a required field"
 
 # Edit BIN when more than 2 BIN on list
   @web
@@ -173,8 +171,6 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user search "BCA"
-    And stop
     And user click BIN burger menu of "384950"
-    And stop
     And user click list "Edit"
     And stop

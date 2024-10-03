@@ -50,7 +50,7 @@ Feature: Payment Issuer - Payment Method
     #Payment Method Detail
     And user click combo box "Bank Name *" and select value "Mandiri"
     And user input text box "Payment Method Name *" with value "PQAPayment"
-    And user click dropdown "Payment Method Type" and select value "Card"
+    And user click dropdown "Payment Method Type" and select value "Direct Debit"
     And user input text area "Description" with value "description in here"
     #Payment Method PIC
     And user click dropdown "PIC Type *" and select value "Business"
@@ -58,7 +58,7 @@ Feature: Payment Issuer - Payment Method
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "Insert payment method success"
+    Then show alert pop up "Insert payment method bank success"
 
 # add Payment Method QRIS Type
   @web
@@ -78,7 +78,7 @@ Feature: Payment Issuer - Payment Method
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "Insert payment method success"
+    Then show alert pop up "Insert payment method wallet success"
 
 
 # add Payment Method BNPL Type
@@ -99,7 +99,7 @@ Feature: Payment Issuer - Payment Method
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "Insert payment method success"
+    Then show alert pop up "Insert payment method bnpl success"
 
 
 # Cancel add Payment Method Bank
@@ -145,12 +145,12 @@ Feature: Payment Issuer - Payment Method
 
 # Cancel add Payment Method BNPL Type
   @web
-  Scenario: Add Existing Data BNPL
+  Scenario: Cancel Add Data BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user click buttonDrop "Add" and select value "QRIS Type"
+    And user click buttonDrop "Add" and select value "BNPL Type"
     #Payment Method Detail
     And user click dropdown "BNPL" and select value "Kredivo"
     And user input text box "Payment Method Name *" with value "PQAPayment"
@@ -174,7 +174,7 @@ Feature: Payment Issuer - Payment Method
     #Payment Method Detail
     And user click combo box "Bank Name *" and select value "Mandiri"
     And user input text box "Payment Method Name *" with value "PQAPayment"
-    And user click dropdown "Payment Method Type" and select value "Card"
+    And user click dropdown "Payment Method Type" and select value "Transfer"
     And user input text area "Description" with value "description in here"
     #Payment Method PIC
     And user click dropdown "PIC Type *" and select value "Business"
@@ -182,7 +182,7 @@ Feature: Payment Issuer - Payment Method
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "Payment method already exists"
+    Then show alert pop up "Payment method bank already exists"
 
 # add existing Payment Method QRIS Type
   @web
@@ -202,7 +202,27 @@ Feature: Payment Issuer - Payment Method
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "Payment method already exists"
+    Then show alert pop up "Payment method wallet already exists"
+
+    # add existing Payment Method BNPL Type
+  @web
+  Scenario: Add Existing Data BNPL
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "Payment Method"
+    And user click buttonDrop "Add" and select value "BNPL Type"
+    #Payment Method Detail
+    And user click dropdown "BNPL" and select value "Kredivo"
+    And user input text box "Payment Method Name *" with value "PQAPayment"
+    And user input text area "Description" with value "description in here"
+    #Payment Method PIC
+    And user click dropdown "PIC Type *" and select value "Business"
+    And user input text box "PIC Name *" with value "Satrowijoyo"
+    And user input text box "PIC Email *" with value "PQA@gmail.com"
+    And user input text box "PIC Phone Number *" with value "088126137123"
+    When user click button "Add Payment Method"
+    Then show alert pop up "Payment method bnpl already exists"
 
 # Edit Payment Method Bank
   @web
@@ -211,16 +231,13 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "Mandiri"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Edit"
-    And user click combo box "Bank Name *" and select value "Mandiri"
-    And user input text box "Payment Method Name *" with value "PQA Bank"
-    And user click dropdown "Payment Method Type" and select value "Card"
-    And user input text area "Description" with value "description Bank"
-
+    And user click dropdown "Payment Method Type" and select value "Transfer"
+    And user input text area predefine "Description" with value "description Bank"
     When user click button "Save Changes"
-    Then show alert pop up "Update payment method success"
+    Then show alert pop up "Update payment method bank success"
 
 # Edit Payment Method QRIS
   @web
@@ -229,15 +246,16 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "Mandiri"
+    And user click button "QRIS Type"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Edit"
     And user click dropdown "QRIS" and select value "AstraPay"
-    And user input text box "Payment Method Name *" with value "PQA QRIS"
-    And user input text area "Description" with value "description QRIS"
+    And user input text box predefine "Payment Method Name *" with value "PQA QRIS"
+    And user input text area predefine "Description" with value "description QRIS"
 
     When user click button "Save Changes"
-    Then show alert pop up "Update payment method success"
+    Then show alert pop up "Update payment method wallet success"
 
 # Edit Payment Method BNPL
   @web
@@ -246,35 +264,18 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "Mandiri"
+    And user click button "BNPL Type"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Edit"
     And user click dropdown "BNPL" and select value "Kredivo"
-    And user input text box "Payment Method Name *" with value "PQA BNPL"
-    And user input text area "Description" with value "description BNPL"
+    And user input text box predefine "Payment Method Name *" with value "PQA BNPL"
+    And user input text area predefine "Description" with value "description BNPL"
 
     When user click button "Save Changes"
-    Then show alert pop up "Update payment method success"
+    Then show alert pop up "Update payment method bnpl success"
     
-# add existing Payment Method BNPL Type
-  @web
-  Scenario: Add Existing Data BNPL
-    Given user already login as administrator
-    And user select language "English"
-    And user select menu "Payment Issuer"
-    And user select sub menu "Payment Method"
-    And user click buttonDrop "Add" and select value "QRIS Type"
-    #Payment Method Detail
-    And user click dropdown "BNPL" and select value "Kredivo"
-    And user input text box "Payment Method Name *" with value "PQAPayment"
-    And user input text area "Description" with value "description in here"
-    #Payment Method PIC
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
-    When user click button "Add Payment Method"
-    Then show alert pop up "Payment method already exists"
+
     
 # Duplicate Payment Method PIC
   @web
@@ -283,24 +284,24 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user click buttonDrop "Add" and select value "QRIS Type"
+    And user click buttonDrop "Add" and select value "BNPL Type"
     #Payment Method Detail
     And user click dropdown "BNPL" and select value "Kredivo"
     And user input text box "Payment Method Name *" with value "PQAPayment"
     And user input text area "Description" with value "description in here"
     And user click button "Add"
     #Payment Method PIC
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
+    And user click dropdown "PIC Type *" row "1" and select value "Business"
+    And user input text box "PIC Name *" row "1" with value "Satrowijoyo"
+    And user input text box "PIC Email *" row "1" with value "PQA@gmail.com"
+    And user input text box "PIC Phone Number *" row "1" with value "088126137123"
     #Payment Method PIC 2
-    And user click dropdown "PIC Type *" and select value "Business"
-    And user input text box "PIC Name *" with value "Satrowijoyo"
-    And user input text box "PIC Email *" with value "PQA@gmail.com"
-    And user input text box "PIC Phone Number *" with value "088126137123"
+    And user click dropdown "PIC Type *" row "2" and select value "Business"
+    And user input text box "PIC Name *" row "2" with value "Satrowijoyo"
+    And user input text box "PIC Email *" row "2" with value "PQA@gmail.com"
+    And user input text box "PIC Phone Number *" row "2" with value "088126137123"
     When user click button "Add Payment Method"
-    Then show alert pop up "PIC already exists"
+    Then show alert PIC Unique "PIC data should be unique"
 
 # Do not fill the required data
   @web
@@ -323,11 +324,11 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "PQA Bank"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete payment method success"
+    Then show alert pop up "Delete payment method bank success"
 
 # delete QRIS
   @web
@@ -336,11 +337,12 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "PQA QRIS"
+    And user click button "QRIS Type"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete payment method success"
+    Then show alert pop up "Delete payment method wallet success"
 
 # delete BNPL
   @web
@@ -349,11 +351,12 @@ Feature: Payment Issuer - Payment Method
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
-    And user search "PQA BNPL"
+    And user click button "BNPL Type"
+    And user search "PQAPayment"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete payment method success"
+    Then show alert pop up "Delete payment method bnpl success"
 
 # Edit Payment Method when more than 2 Payment method on list
   @web
@@ -367,10 +370,5 @@ Feature: Payment Issuer - Payment Method
     And user click payment method burger menu of "BluBCA"
     And stop
     And user click list "Edit"
-    And user click combo box "Bank Name *" and select value "Mandiri"
-    And user input text box "Payment Method Name *" with value "PQA Bank"
-    And user click dropdown "Payment Method Type" and select value "Card"
-    And user input text area "Description" with value "description Bank"
-
     When user click button "Save Changes"
-    Then show alert pop up "Update payment method success"
+    Then show alert pop up "Update payment method bank success"

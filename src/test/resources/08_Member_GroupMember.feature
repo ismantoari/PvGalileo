@@ -35,7 +35,7 @@ Feature: Member - Group Member
     And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
     And user click dropdown "Membership" and select value "Silver"
     When user click button "Add Group Member"
-    Then show alert pop up "Insert group member success"
+    Then show alert pop up "Insert Member Group Success"
 
 # Add group member 2
   @web
@@ -53,7 +53,7 @@ Feature: Member - Group Member
     And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
     And user click dropdown "Membership" and select value "Gold"
     When user click button "Add Group Member"
-    Then show alert pop up "Insert group member success"
+    Then show alert pop up "Insert Member Group Success"
 
 # Edit Group Member
   @web
@@ -73,7 +73,7 @@ Feature: Member - Group Member
     And user click dropdown "Loyalty Program" and select value "Loyalty SQA"
     And user click dropdown "Membership" and select value "Silver Member"
     When user click button "Save Changes"
-    Then show alert pop up "Update group member success"
+    Then show alert pop up "Update Member Group Success"
 
 # Cancel Group Member
   @web
@@ -109,7 +109,7 @@ Feature: Member - Group Member
     And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
     And user click dropdown "Membership" and select value "Silver"
     When user click button "Add Group Member"
-    Then show alert pop up "Data Already Exists"
+    Then show alert pop up "Member group name already exist"
 
 # positive case search data
   @web
@@ -132,7 +132,7 @@ Feature: Member - Group Member
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete group member success"
+    Then show alert pop up "Delete Member Group Success"
 
     # Delete Group Member 2
   @web
@@ -145,4 +145,4 @@ Feature: Member - Group Member
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete group member success"
+    Then show alert pop up "Delete Member Group Success"

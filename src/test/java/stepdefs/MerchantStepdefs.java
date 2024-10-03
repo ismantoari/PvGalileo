@@ -8,8 +8,13 @@ public class MerchantStepdefs {
 
     @And("user click button add MID list")
     public void userClickButtonAddRewardList(){
-        merchantAddMerchantList.userClickMIDList("Add");
+        merchantAddMerchantList.userClickMIDList();
 
+    }
+
+    @And("click button add merchant representative")
+    public void clickButtonAddMerchantRepresentative() {
+        merchantAddMerchantList.clickButtonAddMerchantRepresentative();
     }
 }
 

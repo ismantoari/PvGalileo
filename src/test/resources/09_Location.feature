@@ -27,14 +27,12 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click dropdown "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "BRI"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
     And user click button "Add"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
     And user input text box "Total Slot" with value "10"
     #Landlord Representative
     And user click dropdown "PIC Type *" and select value "Business"
@@ -42,7 +40,7 @@ Feature: Location
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Location"
-    Then show alert pop up "Add Location Success"
+    Then show alert pop up "Insert Landlord success"
 
 # normal case add location 2
   @web
@@ -54,14 +52,12 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Sendiri"
     And user input text box "Description" with value "this is description"
-    And user click dropdown "Bank *" and select value "Mandiri"
+    And user click combo box "Bank *" and select value "Mandiri"
     And user input text box "Bank Account Number *" with value "9217321"
     And user input text area "Address" with value "jalan Perdana sendiri pecenongan barat"
     #Loyalty Program Booking Facilities
     And user click button "Add"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
     And user input text box "Total Slot" with value "10"
     #Landlord Representative
     And user click dropdown "PIC Type *" and select value "Business"
@@ -69,7 +65,7 @@ Feature: Location
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Location"
-    Then show alert pop up "Add Location Success"
+    Then show alert pop up "Insert Landlord success"
 
 # Edit location
   @web
@@ -77,21 +73,21 @@ Feature: Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
-    And user search "Maju Jaya Sendiri"
+    And user search "Madu Jaya Ajalah"
     And user click burger menu
     And user click list "Edit"
     And user input text box predefine "Location Name *" with value "Madu Jaya Ajalah"
-    And user input text box predefine "Description" with value "Deskripsi disini"
-    And user click dropdown "Bank *" and select value "Mandiri"
+    And user input text area predefine "Description" with value "Deskripsi disini"
+    And user click combo box predefine "Bank *" and select value "Mandiri"
     And user input text box predefine "Bank Account Number *" with value "9217321"
     And user input text area predefine "Address" with value "jalan Perdana ajalah pecenongan barat"
     #Loyalty Program Booking Facilities
     And user click button "Add"
-    And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user input text box "Total Slot" with value "100"
+#    And user upload loyalty logo "D:/PQA.jpg" Facility "2"
+    And stop
+    And user input text box "Total Slot" row "2" with value "100"
     When user click button "Save Changes"
-    Then show alert pop up "Update Location Success"
+    Then show alert pop up "Update Landlord success"
 
 # cancel add location
   @web
@@ -103,14 +99,12 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click dropdown "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "BRI"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
     And user click button "Add"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
     And user input text box "Total Slot" with value "10"
     #Landlord Representative
     And user click dropdown "PIC Type *" and select value "Business"
@@ -123,7 +117,7 @@ Feature: Location
 
 # add existing Location
   @web
-  Scenario: Add Existing Loacation
+  Scenario: Add Existing Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
@@ -131,14 +125,12 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click dropdown "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "BRI"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
     And user click button "Add"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click dropdown "Booking Type" and select value "Playground"
-    And user click dropdown "Booking Type" and select value "Parking"
     And user input text box "Total Slot" with value "10"
     #Landlord Representative
     And user click dropdown "PIC Type *" and select value "Business"
@@ -146,7 +138,7 @@ Feature: Location
     And user input text box "PIC Email *" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Add Location"
-    Then show alert pop up "Location Already Exists"
+    Then show alert pop up "Landlord already registered"
 
 # do not fill the required data
   @web

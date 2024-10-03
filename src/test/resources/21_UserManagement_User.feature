@@ -15,7 +15,8 @@ Feature: User Management - User
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"
-    When user select sub menu "User"
+    And user select sub menu "User"
+    When user click button "Add User"
     Then user is on "add user" page
 
 # Add user 1
@@ -162,7 +163,7 @@ Feature: User Management - User
     #reason
     And user click dropdown "Reason" and select value "New entry data"
     When user click button "Add User"
-    Then show alert pop up "Phone Number already registered"
+    Then show alert pop up "Phone number already registered"
 
 # data already exists - Email
   @web

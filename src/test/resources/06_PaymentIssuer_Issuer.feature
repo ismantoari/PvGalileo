@@ -40,7 +40,7 @@ Feature: Payment Issuer - Issuer
     And user input text box "Bank Name *" with value "JAGO"
     And user input text area "Description" with value "This is Jago Bank"
     When user click button "Add Bank"
-    Then show alert pop up "Insert issuer list success"
+    Then show alert pop up "Insert issuer success"
 
 # add BNPL
   @web
@@ -53,7 +53,7 @@ Feature: Payment Issuer - Issuer
     And user input text box "BNPL Type Name *" with value "Kredivisa"
     And user input text area "Description" with value "This is Kredivisa"
     And user click button "Add BNPL Type"
-    Then show alert pop up "Insert issuer list success"
+    Then show alert pop up "Insert BNPL success"
 
 # Edit Bank
   @web
@@ -68,7 +68,7 @@ Feature: Payment Issuer - Issuer
     And user input text box predefine "Bank Name *" with value "Superbank"
     And user input text area predefine "Description" with value "This is Superbank Bank"
     And user click button "Save Changes"
-    Then show alert pop up "Update issuer list success"
+    Then show alert pop up "Update issuer success"
 
 # Edit BNPL
   @web
@@ -77,13 +77,14 @@ Feature: Payment Issuer - Issuer
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Issuer"
-    And user search "JAGO"
+    And user click button "BNPL Type"
+    And user search "Kredivisa"
     And user click burger menu
     And user click list "Edit"
     And user input text box predefine "BNPL Type Name *" with value "Kreditinaja"
     And user input text area predefine "Description" with value "This is Kreditinaja"
     And user click button "Save Changes"
-    Then show alert pop up "Update issuer list success"
+    Then show alert pop up "Update BNPL success"
 
 # cancel add Bank
   @web
@@ -122,7 +123,7 @@ Feature: Payment Issuer - Issuer
     And user input text box "Bank Name *" with value "Superbank"
     And user input text area "Description" with value "This is Superbank Bank"
     When user click button "Add Bank"
-    Then show alert pop up "Issuer Already Exists"
+    Then show alert pop up "Issuer already registered"
 
 # negative case not fill the required data
   @web
@@ -149,18 +150,19 @@ Feature: Payment Issuer - Issuer
     When user click button "Delete"
     Then show alert pop up "Delete issuer list success"
 
-# Delete Bank
+# Delete BNPL
   @web
   Scenario: Delete issuer BNPL
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "Issuer"
+    And user click button "BNPL Type"
     And user search "Kreditinaja"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete issuer list success"
+    Then show alert pop up "Delete BNPL success"
 
 # Edit Payment issuer when more than 2 Payment issuer on list
   @web
@@ -172,9 +174,6 @@ Feature: Payment Issuer - Issuer
     And user search "BCA"
     And stop
     And user click payment issuer burger menu of "BluBCA"
-    And stop
     And user click list "Edit"
-    And user input text box predefine "Bank Name *" with value "Superbank"
-    And user input text area predefine "Description" with value "This is Superbank Bank"
     And user click button "Save Changes"
-    Then show alert pop up "Update issuer list success"
+    Then show alert pop up "Update issuer success"

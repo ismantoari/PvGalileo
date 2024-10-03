@@ -34,7 +34,7 @@ Feature: User Management - Subgroup
     #Privilege List
     And user click button "Select All"
     #reason
-    And user click dropdown "Reason" and select value "New Entry Data"
+    And user click dropdown "Reason" and select value "New entry data"
     When user click button "Add Subgroup"
     Then show alert pop up "Insert subgroup list success"
 
@@ -53,7 +53,7 @@ Feature: User Management - Subgroup
     #Privilege List
     And user click button "Select All"
     #reason
-    And user click dropdown "Reason" and select value "New Entry Data"
+    And user click dropdown "Reason" and select value "New entry data"
     When user click button "Add Subgroup"
     Then show alert pop up "Insert subgroup list success"
 
@@ -64,10 +64,13 @@ Feature: User Management - Subgroup
     And user select language "English"
     And user select menu "User Management"
     And user select sub menu "Subgroup"
+    And user search "PQA Subgroup 1"
+    And user click burger menu
+    And user click list "Edit"
     #subgroup detail
-    And user input text box "Subgroup Name *" with value "PQA Subgrouptest"
-    And user click combo box "Group Name *" and select value "Group lvl1"
-    And user input text area "Subgroup Description" with value "this is desc"
+    And user input text box predefine "Subgroup Name *" with value "PQA Subgrouptest"
+    And user click combo box predefine "Group Name *" and select value "Group lvl1"
+    And user input text area predefine "Subgroup Description" with value "this is desc"
     #Privilege List
     And user click button "Select All"
     #reason
@@ -82,6 +85,7 @@ Feature: User Management - Subgroup
     And user select language "English"
     And user select menu "User Management"
     And user select sub menu "Subgroup"
+    And user click button "Add Subgroup"
     #subgroup detail
     And user input text box "Subgroup Name *" with value "PQA Subgroup 1"
     And user click combo box "Group Name *" and select value "test desc"
@@ -89,7 +93,7 @@ Feature: User Management - Subgroup
     #Privilege List
     And user click button "Select All"
     #reason
-    And user click dropdown "Reason" and select value "New Entry Data"
+    And user click dropdown "Reason" and select value "New entry data"
     When user click button "Cancel"
     Then user is on "subgroup" page
 
@@ -114,7 +118,7 @@ Feature: User Management - Subgroup
     And user select language "English"
     And user select menu "User Management"
     And user select sub menu "Subgroup"
-    And user search "PQA Subgroup 1"
+    And user search "PQA Subgroup 2"
     And user click burger menu
     And user click list "Delete"
     And user click dropdown "Reason" and select value "change request"

@@ -68,8 +68,8 @@ Feature: User Management - Package
     And user click burger menu
     And user click list "Edit"
     #package detail
-    And user input text box "Package Name *" with value "PQA Packagetest"
-    And user input text area "Package Description" with value "this is desc"
+    And user input text box predefine "Package Name *" with value "PQA Packagetest"
+    And user input text area predefine "Package Description" with value "this is desc"
     #privilege list
     And user click button "Select All"
     #reason
@@ -91,7 +91,7 @@ Feature: User Management - Package
     #privilege list
     And user click button "Select All"
     #reason
-    And user click dropdown "Reason" and select value "New Entry Data"
+    And user click dropdown "Reason" and select value "New entry data"
     When user click button "Cancel"
     Then user is on "package" page
 
@@ -104,14 +104,14 @@ Feature: User Management - Package
     And user select sub menu "Package"
     And user click button "Add Package"
     #package detail
-    And user input text box "Package Name *" with value "PQA Package 1"
+    And user input text box "Package Name *" with value "PQA Package 2"
     And user input text area "Package Description" with value "ini desc"
     #privilege list
     And user click button "Select All"
     #reason
     And user click dropdown "Reason" and select value "New entry data"
     When user click button "Add Package"
-    Then show alert pop up "Package Already Exists"
+    Then show alert pop up "Package already exists"
 
 # delete Subgroup 1
   @web

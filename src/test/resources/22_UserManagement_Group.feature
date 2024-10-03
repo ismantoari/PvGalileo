@@ -6,7 +6,7 @@ Feature: User Management - Group
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"
-    When user select sub menu "User"
+    When user select sub menu "Group"
     Then user is on "group" page
 
 # Check user management - add group page
@@ -15,6 +15,8 @@ Feature: User Management - Group
     Given user already login as administrator
     And user select language "English"
     And user select menu "User Management"
+    And user select sub menu "Group"
+    When user click button "Add Group"
     Then user is on "add group" page
 
 #Add group 1
@@ -63,6 +65,8 @@ Feature: User Management - Group
     And user select menu "User Management"
     And user select sub menu "Group"
     And user search "PQA Group"
+    And user click burger menu
+    And user click list "Edit"
     #group detail
     And user input text box "Group Name *" with value "PQA Grouptest"
     And user click combo box "Package *" and select value "Merchant"
