@@ -253,7 +253,6 @@ Feature: Payment Issuer - Payment Method
     And user click dropdown "QRIS" and select value "AstraPay"
     And user input text box predefine "Payment Method Name *" with value "PQA QRIS"
     And user input text area predefine "Description" with value "description QRIS"
-
     When user click button "Save Changes"
     Then show alert pop up "Update payment method wallet success"
 
@@ -271,12 +270,9 @@ Feature: Payment Issuer - Payment Method
     And user click dropdown "BNPL" and select value "Kredivo"
     And user input text box predefine "Payment Method Name *" with value "PQA BNPL"
     And user input text area predefine "Description" with value "description BNPL"
-
     When user click button "Save Changes"
     Then show alert pop up "Update payment method bnpl success"
-    
 
-    
 # Duplicate Payment Method PIC
   @web
   Scenario: Duplicate Payment Method PIC

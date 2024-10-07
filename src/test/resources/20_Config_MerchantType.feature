@@ -62,7 +62,6 @@ Feature: Feature - Merchant Type
   @web
   Scenario: Edit Merchant Type
     Given user already login as administrator
-    Given user already login as administrator
     And user select language "English"
     And user select menu "Config"
     And user select sub menu "Merchant Type"

@@ -8,7 +8,6 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     When user select sub menu "BIN"
     Then user is on "BIN" page
-    Then user is on "BIN" page
 
 #  check add BIN page
   @web

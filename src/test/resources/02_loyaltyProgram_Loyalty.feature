@@ -273,7 +273,7 @@ Feature: Loyalty Program - Loyalty
 #Normal case Edit Loyalty Program From All Payment Method to Bank BNI only
 
   @web
-  Scenario: Edit Loyalty Program From All Payment Method to QRIS Monei only
+  Scenario: Edit Loyalty Program From All Payment Method to Bank BRI only
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"

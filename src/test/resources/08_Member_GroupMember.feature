@@ -57,7 +57,7 @@ Feature: Member - Group Member
 
 # Edit Group Member
   @web
-    Scenario: Edit group member
+  Scenario: Edit group member
     Given user already login as administrator
     And user select language "English"
     And user select menu "Member"

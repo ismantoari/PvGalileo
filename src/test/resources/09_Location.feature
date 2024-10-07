@@ -69,7 +69,7 @@ Feature: Location
 
 # Edit location
   @web
-    Scenario: Edit Location
+  Scenario: Edit Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
@@ -113,7 +113,6 @@ Feature: Location
     And user input text box "PIC Phone Number *" with value "088126137123"
     When user click button "Cancel"
     Then user is on "location" page
-    Then stop
 
 # add existing Location
   @web

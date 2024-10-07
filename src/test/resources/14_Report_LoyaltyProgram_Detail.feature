@@ -22,8 +22,8 @@ Feature: Report - Loyalty Program - Detail
     And user click combo box "Loyalty Program" and select value "PVS Loyalty"
     And user click dropdown "Period" and select value "Specific Date"
     And user input text box predefine "Date Time" with value "03-09-2024"
-    And user click button "Download"
-    And stop
+    When user click button "Download"
+    Then stop
 
 #Download Weekly
   @web
@@ -37,7 +37,7 @@ Feature: Report - Loyalty Program - Detail
     And user click dropdown "Period" and select value "Weekly"
     And user input text box predefine "Date Time" with value "03-09-2024"
     When user click button "Download"
-    And stop
+    Then stop
 
 #Download Monthly
   @web

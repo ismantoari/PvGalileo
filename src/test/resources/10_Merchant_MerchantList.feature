@@ -129,8 +129,8 @@ Feature: Merchant - Merchant List
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Merchant List"
-    And user search "PQA Marketplace 2"
-    And stop
+    When user search "PQA Marketplace 2"
+    Then stop
 
 # positive case filter Merchant Type
   @web

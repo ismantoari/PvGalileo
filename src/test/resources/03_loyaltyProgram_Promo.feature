@@ -368,9 +368,6 @@ Feature: Loyalty Program - Promo
 
     And user click list "Edit"
 
-#    And user click on switch "Publish Promo"
-  # Promo Place
-#    And user click combo box check box "Merchant" and select value "Toma's Brasserie"
   When user click button "Save Changes"
   Then show alert pop up "Update promo success"
 

@@ -359,8 +359,8 @@ Feature: Loyalty Program - Voucher
 #  And user click combo box check box "Merchant" and select value "Toma's Brasserie"
 
 
-#  When user click button "Save Changes"
-#  Then show alert pop up "Update Voucher list success"
+  When user click button "Save Changes"
+  Then show alert pop up "Update Voucher list success"
   
 # Delete Voucher
   @web
