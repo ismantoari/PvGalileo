@@ -37,7 +37,6 @@ Feature: Loyalty Program - Loyalty
     And user click radio button of "Accumulated Earn Point Duration" with value "In the Last 3 Months"
     And user click radio button of "OTP Digit" with value "No OTP"
     And user input text area "Description" with value "Loyalty program QA 1"
-    # Add membership bronze
     And user click add membership
     And user input text box "Level Name *" with value "bronze Member"
     And user input Member Type Color with value "#cd7F32"
@@ -45,12 +44,10 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Spending To Earn One Point *" with value "2000"
     And user select Partial Redeem "Yes"
     And user input text box "Max Redeem *" with value "0"
-        ## Add Reward List 1
     And user click button add reward list
     And user upload picture reward list "1" with path "D:\K1.jpg"
     And user input reward name of reward list "1" with "Coffee"
     And user input Reward Description of reward list "1" with value "reward QA level pertama"
-        ## Add Reward List 2
     And user click button add reward list
     And user upload picture reward list "2" with path "D:\D1.jpg"
     And user input reward name of reward list "2" with "Orange Juice"
@@ -99,7 +96,6 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    # Add Membership Gold
     And user click add membership
     And user input text box "Level Name *" with value "Gold Badge Member"
     And user input Member Type Color with value "#eef300"
@@ -125,7 +121,6 @@ Feature: Loyalty Program - Loyalty
     And user search "Loyalty SQA 1"
     And user click burger menu
     And user click list "Edit"
-    # Add Membership Platinum
     And user click add membership
     And user input text box "Level Name *" with value "Platinum Badge Membership"
     And user input Member Type Color with value "#bee1f3"
@@ -181,7 +176,7 @@ Feature: Loyalty Program - Loyalty
     And user click burger menu
     And user click list "Edit"
     #Add Bank
-#    And user click check checkbox "All Payment Method Including Cash"
+    And user click check checkbox "All Payment Method Including Cash"
     And user click check checkbox "All Bank"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
