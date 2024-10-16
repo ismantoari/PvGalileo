@@ -47,7 +47,7 @@ Feature: Merchant - Merchant List
     And user click combo box "Location" and select value "PIK"
     And user input text area "Address" with value "this is address"
     #Bank Account
-    And user click combo box "Bank *" and select value "Mandiri"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
     And user click button add MID list
@@ -162,7 +162,7 @@ Feature: Merchant - Merchant List
     And user click combo box "Postal Code *" and select value "12313"
     And user input text area "Address" with value "this is address"
     #Bank Account
-    And user click combo box "Bank *" and select value "Mandiri"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
     And user click button add MID list
@@ -202,7 +202,7 @@ Feature: Merchant - Merchant List
     And user click combo box "Location" and select value "Chillax"
     And user input text area "Address" with value "this is a new address"
     #Bank Account
-    And user click combo box "Bank *" and select value "BNI"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "23114112"
     #MID
     And user click button add MID list
@@ -259,7 +259,7 @@ Feature: Merchant - Merchant List
     And user input text area "Address" with value "this is address"
     And user input text box "Postal Code *" with value "55211"
     #Bank Account
-    And user click combo box "Bank *" and select value "Mandiri"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "10237123"
     #MID
     And user click button add MID list

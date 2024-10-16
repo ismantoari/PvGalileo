@@ -27,7 +27,7 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click combo box "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
@@ -52,7 +52,7 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Sendiri"
     And user input text box "Description" with value "this is description"
-    And user click combo box "Bank *" and select value "Mandiri"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "9217321"
     And user input text area "Address" with value "jalan Perdana sendiri pecenongan barat"
     #Loyalty Program Booking Facilities
@@ -78,7 +78,7 @@ Feature: Location
     And user click list "Edit"
     And user input text box predefine "Location Name *" with value "Madu Jaya Ajalah"
     And user input text area predefine "Description" with value "Deskripsi disini"
-    And user click combo box predefine "Bank *" and select value "Mandiri"
+    And user click combo box predefine "Bank *" and select value "Retro Bank"
     And user input text box predefine "Bank Account Number *" with value "9217321"
     And user input text area predefine "Address" with value "jalan Perdana ajalah pecenongan barat"
     #Loyalty Program Booking Facilities
@@ -99,7 +99,7 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click combo box "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
@@ -124,7 +124,7 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click combo box "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     #Loyalty Program Booking Facilities
@@ -168,7 +168,7 @@ Feature: Location
     #location detail
     And user input text box "Location Name *" with value "Madu Jaya Mandiri"
     And user input text box "Description" with value "this is desc"
-    And user click combo box "Bank *" and select value "BRI"
+    And user click combo box "Bank *" and select value "Retro Bank"
     And user input text box "Bank Account Number *" with value "0012713"
     And user input text area "Address" with value "jalan Perdana mandiri pecenongan barat"
     

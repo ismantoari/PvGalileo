@@ -15,7 +15,7 @@ Feature: Loyalty Program - Loyalty
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"
-    And user select sub menu "Loyalt"
+    And user select sub menu "Loyalty"
     When user click button "Add Loyalty"
     Then user is on "add loyalty" page
 

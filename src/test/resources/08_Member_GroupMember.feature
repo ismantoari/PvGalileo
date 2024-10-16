@@ -32,8 +32,8 @@ Feature: Member - Group Member
     And user click dropdown "Gender" and select value "Male"
     And user click dropdown "Minimum Age" and select value "18"
     And user click dropdown "Maximum Age" and select value "25"
-    And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
-    And user click dropdown "Membership" and select value "Silver"
+    And user click dropdown "Loyalty Program" and select value "Loyalty Manual Test"
+    And user click dropdown "Membership" and select value "silver member"
     When user click button "Add Group Member"
     Then show alert pop up "Insert Member Group Success"
 
@@ -50,8 +50,8 @@ Feature: Member - Group Member
     And user click dropdown "Gender" and select value "Female"
     And user click dropdown "Minimum Age" and select value "15"
     And user click dropdown "Maximum Age" and select value "25"
-    And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
-    And user click dropdown "Membership" and select value "Gold"
+    And user click dropdown "Loyalty Program" and select value "Loyalty Manual Test"
+    And user click dropdown "Membership" and select value "gold member"
     When user click button "Add Group Member"
     Then show alert pop up "Insert Member Group Success"
 
@@ -88,8 +88,8 @@ Feature: Member - Group Member
     And user click dropdown "Gender" and select value "Male"
     And user click dropdown "Minimum Age" and select value "18"
     And user click dropdown "Maximum Age" and select value "25"
-    And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
-    And user click dropdown "Membership" and select value "Silver"
+    And user click dropdown "Loyalty Program" and select value "Loyalty Manual Test"
+    And user click dropdown "Membership" and select value "silver member"
     When user click button "Cancel"
     Then user is on "group member" page
 
@@ -106,8 +106,8 @@ Feature: Member - Group Member
     And user click dropdown "Gender" and select value "Male"
     And user click dropdown "Minimum Age" and select value "18"
     And user click dropdown "Maximum Age" and select value "25"
-    And user click dropdown "Loyalty Program" and select value "PQA Loyalty"
-    And user click dropdown "Membership" and select value "Silver"
+    And user click dropdown "Loyalty Program" and select value "Loyalty Manual Test"
+    And user click dropdown "Membership" and select value "silver member"
     When user click button "Add Group Member"
     Then show alert pop up "Member group name already exist"
 

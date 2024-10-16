@@ -27,7 +27,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "Mandiri Visa Platinum"
     And user input text box "BIN *" with value "556887"
@@ -43,7 +43,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "558611"
@@ -62,7 +62,7 @@ Feature: Payment Issuer - BIN
     And user click burger menu
     And user click list "Edit"
     And stop
-    And user click combo box "Issuer Name *" and select value "BRI"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And stop
     And user click dropdown "Card Type *" and select value "Other"
     And user input text box predefine "BIN Label *" with value "BRI Mastercard Platinum"
@@ -79,7 +79,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "558677971"
@@ -103,7 +103,7 @@ Feature: Payment Issuer - BIN
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
-    When user click dropdown "Issuer Name" and select value "Mandiri"
+    When user click dropdown "Issuer Name" and select value "Retro Bank"
     Then stop
 
 #Delete BIN
@@ -128,7 +128,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "Mandiri Visa Platina"
     And user input text box "BIN *" with value "558677971"
@@ -144,7 +144,7 @@ Feature: Payment Issuer - BIN
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
     And user click button "Add BIN"
-    And user click combo box "Issuer Name *" and select value "Mandiri"
+    And user click combo box "Issuer Name *" and select value "Retro Bank"
     And user click dropdown "Card Type *" and select value "Credit"
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "22"

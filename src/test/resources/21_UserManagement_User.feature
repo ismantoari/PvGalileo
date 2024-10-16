@@ -28,7 +28,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Butlers Steak"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Merchant"
     And user input text box "User Name *" with value "Admerch1"
     And user input text box "User First Name *" with value "Additional"
@@ -52,7 +52,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Butlers Steak"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Merchant"
     And user input text box "User Name *" with value "Admerch2"
     And user input text box "User First Name *" with value "oldest"
@@ -101,7 +101,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Butlers Steak"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Merchant"
     And user input text box "User Name *" with value "Admerch"
     And user input text box "User First Name *" with value "Additional"
@@ -125,7 +125,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Toma's Brasserie"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Bank"
     And user input text box "User Name *" with value "Admerch2"
     And user input text box "User First Name *" with value "newest"
@@ -150,7 +150,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Toma's Brasserie"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Bank"
     And user input text box "User Name *" with value "Admerch2"
     And user input text box "User First Name *" with value "newest"
@@ -174,7 +174,7 @@ Feature: User Management - User
     And user select sub menu "User"
     And user click button "Add User"
     #user detail
-    And user click combo box "Subgroup *" and select value "Toma's Brasserie"
+    And user click combo box "Subgroup *" and select value "Manual Subgroup[Important]"
     And user click combo box "User Type *" and select value "Bank"
     And user input text box "User Name *" with value "Admerch2"
     And user input text box "User First Name *" with value "newest"

@@ -30,7 +30,7 @@ Feature: Loyalty Program - Voucher
     #Voucher Identification
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Voucher Name *" with value "Promo Loyalty PQA"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
@@ -116,7 +116,7 @@ Feature: Loyalty Program - Voucher
     #Voucher Identification
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "PVS Loyalty"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Voucher Name *" with value "Promo Loyalty PQA 2"
     And user input text box "Voucher Code *" with value "PLPQA2"
     And user input text box "Total Voucher *" with value "100"
@@ -176,7 +176,7 @@ Feature: Loyalty Program - Voucher
     #Voucher Identification
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "PVS Loyalty"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Voucher Name *" with value "Promo Loyalty PVS"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
@@ -234,7 +234,7 @@ Feature: Loyalty Program - Voucher
     #Voucher Identification
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Voucher Name *" with value "Promo Loyalty PQA"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
@@ -333,7 +333,7 @@ Feature: Loyalty Program - Voucher
   And user click list "Edit"
   And user click on switch "Show Preview"
   And user upload loyalty logo "D:/PQA.jpg"
-  And user click combo box predefine "Loyalty Program *" and select value "PVS Loyalty"
+  And user click combo box predefine "Loyalty Program *" and select value "Loyalty Manual Test"
   And user input text box predefine "Voucher Name *" with value "Promo Loyalty PQA 2"
   And user input text box predefine "Voucher Code *" with value "PLPaja"
   And user input text box predefine "Total Voucher *" with value "10"

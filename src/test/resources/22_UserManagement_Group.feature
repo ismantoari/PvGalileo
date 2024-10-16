@@ -29,7 +29,7 @@ Feature: User Management - Group
     And user click button "Add Group"
     #group detail
     And user input text box "Group Name *" with value "PQA Group"
-    And user click combo box "Package *" and select value "test"
+    And user click combo box "Package *" and select value "Manual Package[Important]"
     And user click dropdown "Group Status" and select value "Active"
     And user input text area "Group Description" with value "ini description"
     #data filter
@@ -48,7 +48,7 @@ Feature: User Management - Group
     And user click button "Add Group"
     #group detail
     And user input text box "Group Name *" with value "PQA Group 2"
-    And user click combo box "Package *" and select value "Merchant"
+    And user click combo box "Package *" and select value "Manual Package[Important]"
     And user click dropdown "Group Status" and select value "Active"
     And user input text area "Group Description" with value "ini description"
     #data filter
@@ -69,7 +69,7 @@ Feature: User Management - Group
     And user click list "Edit"
     #group detail
     And user input text box "Group Name *" with value "PQA Grouptest"
-    And user click combo box "Package *" and select value "Merchant"
+    And user click combo box "Package *" and select value "Manual Package[Important]"
     And user click dropdown "Group Status" and select value "Inactive"
     And user input text area predefine "Group Description" with value "this is description"
     #data filter
@@ -88,7 +88,7 @@ Feature: User Management - Group
     And user click button "Add Group"
     #group detail
     And user input text box "Group Name *" with value "PQA Group"
-    And user click combo box "Package *" and select value "test"
+    And user click combo box "Package *" and select value "Manual Package[Important]"
     And user click dropdown "Group Status" and select value "Active"
     And user input text area "Group Description" with value "ini description"
     #data filter
@@ -107,7 +107,7 @@ Feature: User Management - Group
     And user click button "Add Group"
     #group detail
     And user input text box "Group Name *" with value "PQA Group 2"
-    And user click combo box "Package *" and select value "Merchant"
+    And user click combo box "Package *" and select value "Manual Package[Important]"
     And user click dropdown "Group Status" and select value "Active"
     And user input text area "Group Description" with value "ini description"
     #data filter

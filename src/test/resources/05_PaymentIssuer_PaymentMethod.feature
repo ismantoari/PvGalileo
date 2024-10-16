@@ -48,7 +48,7 @@ Feature: Payment Issuer - Payment Method
     And user select sub menu "Payment Method"
     And user click buttonDrop "Add" and select value "Bank"
     #Payment Method Detail
-    And user click combo box "Bank Name *" and select value "Mandiri"
+    And user click combo box "Bank Name *" and select value "Retro Bank"
     And user input text box "Payment Method Name *" with value "PQAPayment"
     And user click dropdown "Payment Method Type" and select value "Direct Debit"
     And user input text area "Description" with value "description in here"
@@ -111,7 +111,7 @@ Feature: Payment Issuer - Payment Method
     And user select sub menu "Payment Method"
     And user click buttonDrop "Add" and select value "Bank"
     #Payment Method Detail
-    And user click combo box "Bank Name *" and select value "Mandiri"
+    And user click combo box "Bank Name *" and select value "Retro Bank"
     And user input text box "Payment Method Name *" with value "PQAPayment"
     And user click dropdown "Payment Method Type" and select value "Card"
     And user input text area "Description" with value "description in here"
@@ -172,7 +172,7 @@ Feature: Payment Issuer - Payment Method
     And user select sub menu "Payment Method"
     And user click buttonDrop "Add" and select value "Bank"
     #Payment Method Detail
-    And user click combo box "Bank Name *" and select value "Mandiri"
+    And user click combo box "Bank Name *" and select value "Retro Bank"
     And user input text box "Payment Method Name *" with value "PQAPayment"
     And user click dropdown "Payment Method Type" and select value "Transfer"
     And user input text area "Description" with value "description in here"
@@ -362,9 +362,7 @@ Feature: Payment Issuer - Payment Method
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
     And user search "BCA"
-    And stop
     And user click payment method burger menu of "BluBCA"
-    And stop
     And user click list "Edit"
     When user click button "Save Changes"
     Then show alert pop up "Update payment method bank success"

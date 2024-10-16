@@ -29,7 +29,7 @@ Feature: User Management - Subgroup
     And user click button "Add Subgroup"
     #subgroup detail
     And user input text box "Subgroup Name *" with value "PQA Subgroup 1"
-    And user click combo box "Group Name *" and select value "test desc"
+    And user click combo box "Group Name *" and select value "Manual Group[Important]"
     And user input text area "Subgroup Description" with value "ini desc"
     #Privilege List
     And user click button "Select All"
@@ -48,7 +48,7 @@ Feature: User Management - Subgroup
     And user click button "Add Subgroup"
     #subgroup detail
     And user input text box "Subgroup Name *" with value "PQA Subgroup 2"
-    And user click combo box "Group Name *" and select value "test desc"
+    And user click combo box "Group Name *" and select value "Manual Group[Important]"
     And user input text area "Subgroup Description" with value "ini desc"
     #Privilege List
     And user click button "Select All"
@@ -88,7 +88,7 @@ Feature: User Management - Subgroup
     And user click button "Add Subgroup"
     #subgroup detail
     And user input text box "Subgroup Name *" with value "PQA Subgroup 1"
-    And user click combo box "Group Name *" and select value "test desc"
+    And user click combo box "Group Name *" and select value "Manual Group[Important]"
     And user input text area "Subgroup Description" with value "ini desc"
     #Privilege List
     And user click button "Select All"
