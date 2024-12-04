@@ -10,7 +10,7 @@ public class Global {
     public static By buttonFlagLanguage = By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-13be9o2']");
 
     public static By selectLanguage(String language) {
-        return By.xpath("//div[@class='MuiStack-root css-1hieftg']/descendant::*[text()='" + language + "']");
+        return By.xpath("//div[@class='MuiStack-root css-1hieftg']/descendant::*[text()='"+ language +"']");
     }
 
     public static By menu(String menuName) {

@@ -31,33 +31,33 @@ Feature: Loyalty Program - Voucher
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
     And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
-    And user input text box "Voucher Name *" with value "Promo Loyalty PQA"
+    And user input text box "Voucher Name *" with value "Promo Loyalty PQA 1"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
-    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
+    And user input text box predefine "Started at *" with value "12-09-2024"
+    And user input text box predefine "Ended at *" with value "14-09-2024"
     And user click on switch "Publish Voucher"
+    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
     #Voucher Calculation
     And user click dropdown "Voucher Type *" and select value "Discount"
     And user click dropdown "Type *" and select value "Fix Amount"
     And user click check checkbox "Loyalty Program Member"
     And user input text box "Voucher Amount *" of "Loyalty Program Member" with value "10000"
     And user input text box "Minimum Transaction *" of "Loyalty Program Member" with value "100000"
-    #Voucher Issuance Velocity & Restriction
-    And user input text box predefine "Started at *" with value "12-09-2024"
-    And user input text box predefine "Ended at *" with value "14-09-2024"
-    And user click dropdown "Period Type" and select value "Daily"
+    #Occasion
+#    And user click radio button of "Occasion" with value "New Member"
+      #Voucher Awarding Rule
+    And user click radio button of "Voucher Awarding Rule" with value "No"
+    #Convert Point
+    And user click radio button of "Convert Point" with value "No"
+     #Voucher Issuance Velocity & Restriction
+     And user click dropdown "Period Type" and select value "Daily"
     And user input text box "Maximum Count" with value "100"
     And user input text box "Maximum Count Per User" with value "1"
     And user click combo box check box "Membership" and select value "silver Member"
     #Voucher Expiry
     And user click radio button of "Voucher Expiry" with value "In Date"
     And user input text box predefine "Expiry Date" with value "14-09-2024"
-    #Voucher Awarding Rule
-    And user click radio button of "Voucher Awarding Rule" with value "No"
-    #Convert Point
-    And user click radio button of "Convert Point" with value "No"
-    #Occasion
-    And user click radio button of "Occasion" with value "New Member"
     #Voucher Place
     And user click combo box check box "Merchant" and select value "Butler's Steak"
 #    Voucher Time - get voucher
@@ -75,7 +75,6 @@ Feature: Loyalty Program - Voucher
     And user click dropdown "Started at" "Minutes" row "1" and select value "49" of "Redeem Voucher"
     And user click dropdown "Ended at" "Hour" row "1" and select value "20" of "Redeem Voucher"
     And user click dropdown "Ended at" "Minutes" row "1" and select value "55" of "Redeem Voucher"
-
     #Voucher Payment Method - get voucher
     And user click button "Add" of payment method "QRIS" on "Get Voucher"
     And user click dropdown applied payment method "QRIS" row "1" with value "Monei" of "Get Voucher"
@@ -120,8 +119,10 @@ Feature: Loyalty Program - Voucher
     And user input text box "Voucher Name *" with value "Promo Loyalty PQA 2"
     And user input text box "Voucher Code *" with value "PLPQA2"
     And user input text box "Total Voucher *" with value "100"
-    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
+    And user input text box predefine "Started at *" with value "19-09-2024"
+    And user input text box predefine "Ended at *" with value "25-09-2024"
     And user click on switch "Publish Voucher"
+    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
     #Voucher Calculation 1
     And user click dropdown "Voucher Type *" and select value "Discount"
     And user click dropdown "Type *" and select value "Fix Amount"
@@ -133,21 +134,20 @@ Feature: Loyalty Program - Voucher
     And user click check checkbox "Galileo Member"
     And user input text box "Voucher Amount *" of "Galileo Member" with value "10000"
     And user input text box "Minimum Transaction *" of "Galileo Member" with value "100000"
+  #Voucher Awarding Rule
+    And user click radio button of "Voucher Awarding Rule" with value "No"
+    #Convert Point
+    And user click radio button of "Convert Point" with value "No"
+    #Occasion
+#    And user click radio button of "Occasion" with value "New Member"
+
   # Voucher Issuance Velocity & Restriction
-    And user input text box predefine "Started at *" with value "19-09-2024"
-    And user input text box predefine "Ended at *" with value "25-09-2024"
-    And user click dropdown "Period Type" and select value "Daily"
+   And user click dropdown "Period Type" and select value "Daily"
     And user input text box "Maximum Count" with value "100"
     And user input text box "Maximum Count Per User" with value "1"
     #Voucher Expiry
     And user click radio button of "Voucher Expiry" with value "In Day(s)"
     And user input text box predefine "Expiry Day(s)" with value "2"
-    #Voucher Awarding Rule
-    And user click radio button of "Voucher Awarding Rule" with value "No"
-    #Convert Point
-    And user click radio button of "Convert Point" with value "No"
-    #Occasion
-    And user click radio button of "Occasion" with value "New Member"
     #Voucher Place
     And user click combo box check box "Merchant" and select value "Butler's Steak"
 
@@ -177,7 +177,7 @@ Feature: Loyalty Program - Voucher
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
     And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
-    And user input text box "Voucher Name *" with value "Promo Loyalty PVS"
+    And user input text box "Voucher Name *" with value "Promo Loyalty PQA 1"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
     And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
@@ -188,6 +188,12 @@ Feature: Loyalty Program - Voucher
     And user click check checkbox "Loyalty Program Member"
     And user input text box "Voucher Amount *" of "Loyalty Program Member" with value "10000"
     And user input text box "Minimum Transaction *" of "Loyalty Program Member" with value "100000"
+    #Occasion
+#    And user click radio button of "Occasion" with value "New Member"
+    #Voucher Awarding Rule
+    And user click radio button of "Voucher Awarding Rule" with value "No"
+    #Convert Point
+    And user click radio button of "Convert Point" with value "No"
     #Voucher Issuance Velocity & Restriction
     And user input text box predefine "Started at *" with value "04-09-2024"
     And user input text box predefine "Ended at *" with value "05-09-2024"
@@ -197,13 +203,7 @@ Feature: Loyalty Program - Voucher
     #Voucher Expiry
     And user click radio button of "Voucher Expiry" with value "In Date"
     And user input text box predefine "Expiry Date" with value "05-09-2024"
-    #Voucher Awarding Rule
-    And user click radio button of "Voucher Awarding Rule" with value "No"
-    #Convert Point
-    And user click radio button of "Convert Point" with value "No"
-    #Occasion
-    And user click radio button of "Occasion" with value "New Member"
-    #Voucher Place
+     #Voucher Place
 #    And user click check checkbox "All Merchant"
     And user click combo box check box "Merchant" and select value "Butler's Steak"
     #Voucher Time - get voucher
@@ -235,20 +235,26 @@ Feature: Loyalty Program - Voucher
     And user click on switch "Show Preview"
     And user upload loyalty logo "D:/PQA.jpg"
     And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
-    And user input text box "Voucher Name *" with value "Promo Loyalty PQA"
+    And user input text box "Voucher Name *" with value "Promo Loyalty PQA 1"
     And user input text box "Voucher Code *" with value "PLPVS1"
     And user input text box "Total Voucher *" with value "100"
-    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
+    And user input text box predefine "Started at *" with value "12-09-2024"
+    And user input text box predefine "Ended at *" with value "14-09-2024"
     And user click on switch "Publish Voucher"
+    And user input text area "Description, Additional Terms & Conditions" with value "This is T&C"
     #Voucher Calculation
     And user click dropdown "Voucher Type *" and select value "Discount"
     And user click dropdown "Type *" and select value "Fix Amount"
     And user click check checkbox "Loyalty Program Member"
     And user input text box "Voucher Amount *" of "Loyalty Program Member" with value "10000"
     And user input text box "Minimum Transaction *" of "Loyalty Program Member" with value "100000"
+   #Occasion
+#    And user click radio button of "Occasion" with value "New Member"
+   #Voucher Awarding Rule
+    And user click radio button of "Voucher Awarding Rule" with value "No"
+   #Convert Point
+    And user click radio button of "Convert Point" with value "No"
     #Voucher Issuance Velocity & Restriction
-    And user input text box predefine "Started at *" with value "12-09-2024"
-    And user input text box predefine "Ended at *" with value "14-09-2024"
     And user click dropdown "Period Type" and select value "Daily"
     And user input text box "Maximum Count" with value "100"
     And user input text box "Maximum Count Per User" with value "1"
@@ -256,12 +262,6 @@ Feature: Loyalty Program - Voucher
     #Voucher Expiry
     And user click radio button of "Voucher Expiry" with value "In Date"
     And user input text box predefine "Expiry Date" with value "14-09-2024"
-    #Voucher Awarding Rule
-    And user click radio button of "Voucher Awarding Rule" with value "No"
-    #Convert Point
-    And user click radio button of "Convert Point" with value "No"
-    #Occasion
-    And user click radio button of "Occasion" with value "New Member"
     #Voucher Place
     And user click combo box check box "Merchant" and select value "Butler's Steak"
 #    Voucher Time - get voucher
@@ -290,6 +290,7 @@ Feature: Loyalty Program - Voucher
     And user click applied payment method "BNPL" sub checkbox "Indodana Paylater" of "Get Voucher"
 
     And user click button "Add" of payment method "Bank" on "Get Voucher"
+    And stop
     And user click dropdown applied payment method "Bank" row "1" with value "BNI" of "Get Voucher"
     And user click applied payment method "Bank" sub checkbox "BNI Debit" of "Get Voucher"
 
@@ -303,6 +304,7 @@ Feature: Loyalty Program - Voucher
     And user click applied payment method "BNPL" sub checkbox "Indodana Paylater" of "Redeem Voucher"
 
     And user click button "Add" of payment method "Bank" on "Redeem Voucher"
+    And stop
     And user click dropdown applied payment method "Bank" row "1" with value "BNI" of "Redeem Voucher"
     And user click applied payment method "Bank" sub checkbox "BNI Debit" of "Redeem Voucher"
 
@@ -337,30 +339,25 @@ Feature: Loyalty Program - Voucher
   And user input text box predefine "Voucher Name *" with value "Promo Loyalty PQA 2"
   And user input text box predefine "Voucher Code *" with value "PLPaja"
   And user input text box predefine "Total Voucher *" with value "10"
-  And user input text area predefine "Description, Additional Terms & Conditions" with value "T&C applied"
-  And user click on switch "Publish Voucher"
-
   And user input text box predefine "Started at *" with value "16-09-2024"
   And user input text box predefine "Ended at *" with value "20-09-2024"
-  And user click dropdown "Period Type" and select value "Daily"
+  And user click on switch "Publish Voucher"
+  And user input text area predefine "Description, Additional Terms & Conditions" with value "T&C applied"
+  #Occasion
+#    And user click radio button of "Occasion" with value "New Member"
+   #Voucher Awarding Rule
+    And user click radio button of "Voucher Awarding Rule" with value "No"
+    And user click dropdown "Period Type" and select value "Weekly"
   And user input text box predefine "Maximum Count" with value "10"
   And user input text box predefine "Maximum Count Per User" with value "1"
+  And user click combo box check box "Membership" and select value "silver Member"
   #Voucher Expiry
-  And user click radio button of "Voucher Expiry" with value "In Day(s)"
   And user input text box predefine "Expiry Day(s)" with value "4"
-  #Voucher Awarding Rule
-  And user click radio button of "Voucher Awarding Rule" with value "No"
-  #Convert Point
-  And user click radio button of "Convert Point" with value "No"
-  #Occasion
-  And user click radio button of "Occasion" with value "New Member"
   #Voucher Place
   And user click check checkbox "All Merchant"
 #  And user click combo box check box "Merchant" and select value "Toma's Brasserie"
-
-
   When user click button "Save Changes"
-  Then show alert pop up "Update Voucher list success"
+  Then show alert pop up "Update voucher success"
   
 # Delete Voucher
   @web
@@ -375,3 +372,17 @@ Feature: Loyalty Program - Voucher
     When user click button "Delete"
     Then show alert pop up "Delete voucher success"
     Then verify deleted loyalty name "Promo Loyalty PQA 2"
+
+    # Delete Voucher
+  @web
+  Scenario: Delete Voucher 2
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Voucher"
+    And user search "Promo Loyalty PQA 1"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete voucher success"
+    Then verify deleted loyalty name "Promo Loyalty PQA 1"

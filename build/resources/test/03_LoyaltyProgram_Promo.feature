@@ -28,7 +28,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo"
     And user input text box "Promo Code *" with value "1022"
     And user input text box "Program Fund *" with value "2000000"
@@ -73,7 +73,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo 2"
     And user input text box "Promo Code *" with value "1023"
     And user input text box "Program Fund *" with value "3000000"
@@ -140,7 +140,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo 3"
     And user input text box "Promo Code *" with value "1024"
     And user input text box "Program Fund *" with value "2000000"
@@ -214,7 +214,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo"
     And user input text box "Promo Code *" with value "1022"
     And user input text box "Program Fund *" with value "2000000"
@@ -245,7 +245,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo"
     And user input text box "Promo Code *" with value "10221"
     And user input text box "Program Fund *" with value "2000000"
@@ -284,7 +284,7 @@ Feature: Loyalty Program - Promo
     And user click button "Add Promo"
     And user click on switch "Show Preview"
     And user upload banner promo "D:\PQA.jpg"
-    And user click combo box "Loyalty Program *" and select value "Loyalty SQA 1"
+    And user click combo box "Loyalty Program *" and select value "Loyalty Manual Test"
     And user input text box "Promo Name *" with value "QA Promo"
     And user input text box "Promo Code *" with value "1022"
     And user input text box "Program Fund *" with value "2000000"
@@ -312,20 +312,16 @@ Feature: Loyalty Program - Promo
   And user search "QA Promo 2"
   And user click burger menu
   And user click list "Edit"
-  And user click combo box predefine "Loyalty Program *" and select value "Loyalty SQA 1"
+  And user click combo box predefine "Loyalty Program *" and select value "Loyalty Manual Test"
   And user input text box predefine "Promo Name *" with value "QA Promo 4"
   And user input text box predefine "Promo Code *" with value "1025"
   And user input text box predefine "Program Fund *" with value "4500000"
   And user input text area predefine "Description, Additional Terms & Conditions" with value "T&C QA Promo applied"
   And user click on switch "Publish Promo"
   # Promo Calculation - Loyalty Program Member
-  And user click dropdown "Promo Type *" and select value "Extra Points Reward"
+  And user click dropdown "Promo Type *" and select value "Discount"
   And user click dropdown "Type *" and select value "Fix Amount"
-  And user click add promo calculation "Loyalty Program Member"
   And user click combo box check box "Membership" and select value "bronze Member"
-  And user input text box predefine "Extra Points *" with value "5000"
-  And user input text box predefine "Minimum Transaction *" with value "10000"
-  And user input text box predefine "Maximum Transaction *" with value "10000"
 
   # Promo Issuance Velocity & Restriction
   And user input text box predefine "Started at *" with value "16-09-2024"
@@ -341,9 +337,23 @@ Feature: Loyalty Program - Promo
   When user click button "Save Changes"
   Then show alert pop up "Update promo success"
 
+    # delete promo
+  @web
+  Scenario: Delete promo 1
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Promo"
+    And user search "QA Promo 4"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete promo success"
+    Then verify deleted loyalty name "QA Promo 4"
+
 # delete promo
   @web
-  Scenario: Delete promo
+  Scenario: Delete promo 2
     Given user already login as administrator
     And user select language "English"
     And user select menu "Loyalty Program"
@@ -354,7 +364,6 @@ Feature: Loyalty Program - Promo
     When user click button "Delete"
     Then show alert pop up "Delete promo success"
     Then verify deleted loyalty name "QA Promo 3"
-
 
 # Edit Promo when more than 2 Promo on list
   @web
@@ -370,6 +379,20 @@ Feature: Loyalty Program - Promo
 
   When user click button "Save Changes"
   Then show alert pop up "Update promo success"
+
+ # delete promo
+  @web
+  Scenario: Delete promo 3
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Loyalty Program"
+    And user select sub menu "Promo"
+    And user search "QA Promo"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete promo success"
+    Then verify deleted loyalty name "QA Promo"
 
     # check mandatory promo
   @web

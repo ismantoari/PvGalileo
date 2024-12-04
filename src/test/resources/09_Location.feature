@@ -73,7 +73,7 @@ Feature: Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
-    And user search "Madu Jaya Ajalah"
+    And user search "Madu Jaya Sendiri"
     And user click burger menu
     And user click list "Edit"
     And user input text box predefine "Location Name *" with value "Madu Jaya Ajalah"
@@ -195,7 +195,7 @@ Feature: Location
     Given user already login as administrator
     And user select language "English"
     And user select menu "Location"
-    And user search "Maju Jaya Sendiri"
+    And user search "Madu Jaya Ajalah"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"

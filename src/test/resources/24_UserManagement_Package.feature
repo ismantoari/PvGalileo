@@ -113,7 +113,7 @@ Feature: User Management - Package
     When user click button "Add Package"
     Then show alert pop up "Package already exists"
 
-# delete Subgroup 1
+# delete package 1
   @web
   Scenario: Delete Package 1
     Given user already login as administrator
@@ -127,7 +127,7 @@ Feature: User Management - Package
     When user click button "Delete"
     Then show alert pop up "Delete package list success"
 
-# delete Subgroup 2
+# delete package 2
   @web
   Scenario: Delete Package 2
     Given user already login as administrator

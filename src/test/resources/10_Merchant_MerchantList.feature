@@ -154,7 +154,7 @@ Feature: Merchant - Merchant List
     #Merchant Logo
     And user upload loyalty logo "D:/PQA.jpg"
     #Merchant Detail
-    And user input text box "Official Name *" with value "PQA Marketplace"
+    And user input text box "Official Name *" with value "PQA Marketplace Multi"
     And user input text box "Alias Name *" with value "PQAM"
     And user click combo box "Merchant Type" and select value "FNB"
     And user click combo box "Merchant Parent" and select value "Butler's Steak"
@@ -174,14 +174,14 @@ Feature: Merchant - Merchant List
     And user input text box "PIC Email *" row "1" with value "PQA@gmail.com"
     And user input text box "PIC Phone Number *" row "1" with value "088126137123"
     # representative 2
-    And user click button "Add"
+    And click button add merchant representative
     And user click dropdown "PIC Type *" row "2" and select value "Business"
     And user input text box "PIC Name *" row "2" with value "Juwongso"
     And user input text box "PIC Email *" row "2" with value "PQA2@gmail.com"
     And user input text box "PIC Phone Number *" row "2" with value "088128961231"
 
     When user click button "Add Merchant"
-    Then show alert pop up "representative already exists"
+    Then show alert pop up "Insert merchant data success"
 
 # Add Existing Merchant Name with the same Location
   @web
@@ -312,7 +312,33 @@ Feature: Merchant - Merchant List
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Merchant List"
+    And user search "PQA Marketplace"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete merchant data success"
+
+    # delete Merchant list
+  @web
+  Scenario: Delete Merchant List
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
     And user search "PQA Marketplace 2"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete merchant data success"
+
+        # delete Merchant list
+  @web
+  Scenario: Delete Merchant List
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Merchant"
+    And user select sub menu "Merchant List"
+    And user search "PQA Marketplace Multi"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"

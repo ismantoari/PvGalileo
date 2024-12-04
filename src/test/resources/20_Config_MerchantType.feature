@@ -68,19 +68,32 @@ Feature: Feature - Merchant Type
     And user search "Beverage Edit"
     And user click burger menu
     And user click list "Edit"
-    And user input text box predefine "Merchant Type Name *" with value "Beverage"
+    And user input text box predefine "Merchant Type Name *" with value "Beverage del"
     And user input text area predefine "Description" with value "this is desc"
     When user click button "Save Changes"
-    Then show alert pop up "Edit Merchant type success"
+    Then show alert pop up "Update Merchant type success"
 
 # delete merchant type
   @web
-  Scenario: Delete Merchant Type
+  Scenario: Delete Merchant Type 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Config"
     And user select sub menu "Merchant Type"
     And user search "Beverage Delete"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete Merchant type success"
+
+    # delete merchant type
+  @web
+  Scenario: Delete Merchant Type 2
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Config"
+    And user select sub menu "Merchant Type"
+    And user search "Beverage del"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"

@@ -57,7 +57,7 @@ Feature: Merchant - Product Setup
     And user select language "English"
     And user select menu "Merchant"
     And user select sub menu "Product Setup"
-    And user search "STK2"
+    And user search "STK1"
     And user click burger menu
     And user click list "Edit"
     And user click combo box predefine "Merchant *" and select value "Toma's Brasserie"

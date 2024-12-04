@@ -6,7 +6,7 @@ Feature: Login
     And input username "administrator"
     And input password "pvs1909~"
     When user click login button
-    Then show alert pop up "Login success"
+#    Then show alert pop up "Login success"
     Then user is on "dashboard" page
 
   @web

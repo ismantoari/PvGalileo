@@ -70,8 +70,6 @@ Feature: Member - Group Member
     And user click dropdown "Gender" and select value "Male"
     And user click dropdown "Minimum Age" and select value "20"
     And user click dropdown "Maximum Age" and select value "30"
-    And user click dropdown "Loyalty Program" and select value "Loyalty SQA"
-    And user click dropdown "Membership" and select value "Silver Member"
     When user click button "Save Changes"
     Then show alert pop up "Update Member Group Success"
 

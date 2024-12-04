@@ -1,6 +1,5 @@
 Feature: Payment Issuer - Payment Method
 
-
 # check payment method page
   @web
   Scenario: check payment method page
@@ -334,7 +333,7 @@ Feature: Payment Issuer - Payment Method
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
     And user click button "QRIS Type"
-    And user search "PQAPayment"
+    And user search "PQA QRIS"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
@@ -348,7 +347,7 @@ Feature: Payment Issuer - Payment Method
     And user select menu "Payment Issuer"
     And user select sub menu "Payment Method"
     And user click button "BNPL Type"
-    And user search "PQAPayment"
+    And user search "PQA BNPL"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"

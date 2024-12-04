@@ -32,8 +32,8 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Point(s) to Rupiah Ratio *" with value "1"
     And user click check checkbox "Mobile Visibility"
     And user click radio button of "Exclusive" with value "No"
-    And user click radio button of "Point Expiry Date" with value "Expiry"
-    And user input Point Expiry in Day with value "3"
+    And user click radio button of "Point Expiry Date" with value "No Expired"
+#    And user input Point Expiry in Day with value "3"
     And user click radio button of "Accumulated Earn Point Duration" with value "In the Last 3 Months"
     And user click radio button of "OTP Digit" with value "No OTP"
     And user input text area "Description" with value "Loyalty program QA 1"
@@ -181,7 +181,6 @@ Feature: Loyalty Program - Loyalty
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
-
 #Normal Case check all payment method
   @web
   Scenario: Check ALL Payment Method inc Cash
@@ -196,8 +195,6 @@ Feature: Loyalty Program - Loyalty
     And user click check checkbox "All Payment Method Including Cash"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
-
-
 
 #Normal case edit bronze member
   @web
@@ -233,7 +230,6 @@ Feature: Loyalty Program - Loyalty
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
-
     #Normal case edit gold member
   @web
   Scenario: Edit Gold Member
@@ -251,7 +247,6 @@ Feature: Loyalty Program - Loyalty
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
 
-
     #Normal case edit platinum member
   @web
   Scenario: Edit Platinum Member
@@ -268,7 +263,6 @@ Feature: Loyalty Program - Loyalty
     And user click button save changes membership
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
-
 
 #Normal case Edit Loyalty Program From All Payment Method to Bank BNI only
 

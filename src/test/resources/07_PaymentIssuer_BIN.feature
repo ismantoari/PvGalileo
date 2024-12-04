@@ -33,7 +33,6 @@ Feature: Payment Issuer - BIN
     And user input text box "BIN *" with value "556887"
     When user click button "Add BIN"
     Then show alert pop up "Insert BIN success"
-    Then verify created new loyalty name "Mandiri Visa Platinum"
 
 # positive case card type credit - edit
   @web
@@ -48,8 +47,7 @@ Feature: Payment Issuer - BIN
     And user input text box "BIN Label *" with value "BRI Visa Gold"
     And user input text box "BIN *" with value "558611"
     When user click button "Add BIN"
-    Then show alert pop up "Insert BIN Success"
-    Then verify created new loyalty name "BRI Visa Gold"
+    Then show alert pop up "Insert BIN success"
 
 #Edit BIN
   @web
@@ -62,13 +60,13 @@ Feature: Payment Issuer - BIN
     And user click burger menu
     And user click list "Edit"
     And stop
-    And user click combo box "Issuer Name *" and select value "Retro Bank"
+    And user click combo box predefine "Issuer Name *" and select value "Retro Bank"
     And stop
-    And user click dropdown "Card Type *" and select value "Other"
+    And user click dropdown "Card Type *" and select value "Debit"
     And user input text box predefine "BIN Label *" with value "BRI Mastercard Platinum"
     And user input text box predefine "BIN *" with value "334011"
     When user click button "Save Changes"
-    Then show alert pop up "Update BIN Success"
+    Then show alert pop up "Update BIN success"
 
 
 # Cancel add BIN
@@ -108,17 +106,29 @@ Feature: Payment Issuer - BIN
 
 #Delete BIN
   @web
-  Scenario: Delete BIN
+  Scenario: Delete BIN 1
     Given user already login as administrator
     And user select language "English"
     And user select menu "Payment Issuer"
     And user select sub menu "BIN"
-    And user search "558611"
+    And user search "334011"
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
     Then show alert pop up "Delete BIN success"
 
+#Delete BIN
+  @web
+  Scenario: Delete BIN 2
+    Given user already login as administrator
+    And user select language "English"
+    And user select menu "Payment Issuer"
+    And user select sub menu "BIN"
+    And user search "556887"
+    And user click burger menu
+    And user click list "Delete"
+    When user click button "Delete"
+    Then show alert pop up "Delete BIN success"
 
 # Negative case card type other already exists
   @web

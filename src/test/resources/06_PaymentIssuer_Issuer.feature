@@ -148,7 +148,7 @@ Feature: Payment Issuer - Issuer
     And user click burger menu
     And user click list "Delete"
     When user click button "Delete"
-    Then show alert pop up "Delete issuer list success"
+    Then show alert pop up "Delete issuer success"
 
 # Delete BNPL
   @web
