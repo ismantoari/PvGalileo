@@ -44,6 +44,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Spending To Earn One Point *" with value "2000"
     And user select Partial Redeem "Yes"
     And user input text box "Max Redeem *" with value "0"
+    And user input text box "Earn Value Cashier *" with value "10"
     And user click button add reward list
     And user upload picture reward list "1" with path "D:\K1.jpg"
     And user input reward name of reward list "1" with "Coffee"
@@ -82,6 +83,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user select Partial Redeem "Yes"
     And user input text box predefine "Max Redeem *" with value "100"
+    And user input text box "Earn Value Cashier *" with value "10"
     And user click button "Add Membership"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
@@ -107,6 +109,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user select Partial Redeem "Yes"
     And user input text box predefine "Max Redeem *" with value "100"
+    And user input text box "Earn Value Cashier *" with value "10"
     And user click button "Add Membership"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
@@ -131,6 +134,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box predefine "Spending To Earn One Point *" with value "500"
     And user select Partial Redeem "Yes"
     And user input text box predefine "Max Redeem *" with value "100"
+    And user input text box "Earn Value Cashier *" with value "10"
     And user click button "Add Membership"
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
@@ -309,6 +313,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Spending To Earn One Point *" with value "2000"
     And user select Partial Redeem "Yes"
     And user input text box "Max Redeem *" with value "0"
+    And user input text box "Earn Value Cashier *" with value "10"
         ## Add Reward List 1
     And user click button add reward list
     And user upload picture reward list "1" with path "D:\K1.jpg"
@@ -346,6 +351,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box predefine "Spending To Earn One Point *" with value "1000"
     And user select Partial Redeem "Yes"
     And user input text box predefine "Max Redeem *" with value "100"
+    And user input text box "Earn Value Cashier *" with value "10"
     And user click button "Cancel" at add membership
     When user click button "Save Changes"
     Then show alert pop up "Update Loyalty program success"
@@ -376,6 +382,7 @@ Feature: Loyalty Program - Loyalty
     And user input text box "Spending To Earn One Point *" with value "2000"
     And user select Partial Redeem "Yes"
     And user input text box "Max Redeem *" with value "0"
+    And user input text box "Earn Value Cashier *" with value "10"
         ## Add Reward List 1
     And user click button add reward list
     And user upload picture reward list "1" with path "D:\K1.jpg"
